@@ -39,6 +39,11 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 			<list>
 				<value>edu.mum.group3.model.Vendor</value>
 				<value>edu.mum.group3.model.Model</value>
+				<value>edu.mum.group3.model.Make</value>
+				<value>edu.mum.group3.model.ServiceType</value>
+				<value>edu.mum.group3.model.ContractType</value>
+				<value>edu.mum.group3.model.User</value>
+				<value>edu.mum.group3.model.ServiceLog</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

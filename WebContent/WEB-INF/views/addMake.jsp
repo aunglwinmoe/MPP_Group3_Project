@@ -10,19 +10,19 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Model Data</h2>
-	<form:form method="POST" action="/group3/saveModel.html" class="col-sm-4">
+	<h2>Add Make Data</h2>
+	<form:form method="POST" action="/group3/saveMake.html" class="col-sm-4">
 		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Model ID:</form:label>
+			<form:label path="id" class="col-sm-5 col-form-label">Make ID:</form:label>
 			<div class="col-sm-7">
-				<form:input path="id" value="${model.id}"
+				<form:input path="id" value="${make.id}"
 						readonly="true" class="form-control"/>
 			</div>
 		</div>
 		<div class="form-group row">
-			<form:label path="modelName" class="col-sm-5 col-form-label">Model Name:</form:label>
+			<form:label path="makeName" class="col-sm-5 col-form-label">Make Name:</form:label>
 			<div class="col-sm-7">
-				<form:input path="modelName" value="${model.modelName}"  class="form-control"/>
+				<form:input path="makeName" value="${make.makeName}"  class="form-control"/>
 			</div>
 		</div>
 		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>

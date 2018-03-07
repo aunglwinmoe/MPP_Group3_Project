@@ -5,7 +5,7 @@ package edu.mum.group3.bean;
  *
  */
 public class VendorBean {
-	private Integer vendorId;
+	private Integer id;
 	private String vendorName;
 	private String title;
 	private Long ssn;
@@ -13,13 +13,12 @@ public class VendorBean {
 	private String phone;
 	private String email;
 	private String address;
-	
-	public Integer getVendorId() {
-		return vendorId;
-	}
 
-	public void setVendorId(Integer vendorId) {
-		this.vendorId = vendorId;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getVendorName() {
 		return vendorName;

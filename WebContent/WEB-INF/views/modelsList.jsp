@@ -21,9 +21,9 @@
 
 		<c:forEach items="${models}" var="model">
 			<tr>
-				<td><c:out value="${model.modelId}"/></td>
+				<td><c:out value="${model.id}"/></td>
 				<td><c:out value="${model.modelName}"/></td>
-				<td align="center"><a href="editModel.html?id=${model.modelId}">Edit</a> | <a href="deleteModel.html?id=${model.modelId}">Delete</a></td>
+				<td align="center"><a href="editModel.html?id=${model.id}">Edit</a> | <a href="deleteModel.html?id=${model.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>

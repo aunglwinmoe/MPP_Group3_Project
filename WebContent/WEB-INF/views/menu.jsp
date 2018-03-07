@@ -37,7 +37,7 @@
 				Registration <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="vendors.html">Vendors</a> <a href="#">Users </a>
+				<a href="vendors.html">Vendors</a> <a href="users.html">Users </a>
 			</div>
 		</div>
 
@@ -46,8 +46,8 @@
 				Configuration <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="models.html">Vehicle Model</a> <a href="#">Vehicle Brand/Make</a> <a
-					href="#">Service Types</a><a href="#">Contract Type</a>
+				<a href="models.html">Vehicle Model</a> <a href="makes.html">Vehicle Brand/Make</a> <a
+					href="serviceTypes.html">Service Types</a><a href="contractTypes.html">Contract Type</a>
 			</div>
 		</div>
 

@@ -1,14 +1,14 @@
 package edu.mum.group3.bean;
 
 public class ContractTypeBean {
-	private String contractType;
+	private Integer id;
 	private String contractTypeName;
 	
-	public String getContractType() {
-		return contractType;
+	public Integer getId() {
+		return id;
 	}
-	public void setContractType(String contractType) {
-		this.contractType = contractType;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getContractTypeName() {
 		return contractTypeName;

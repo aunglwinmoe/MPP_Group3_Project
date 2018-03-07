@@ -3,18 +3,18 @@ package edu.mum.group3.bean;
 import java.util.Date;
 
 public class UserBean {
-	private Long userId;
+	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String userName;
 	private String password;
 	private Date dateOfBirth;
 	
-	public Long getUserId() {
-		return userId;
+	public Integer getId() {
+		return id;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getFirstName() {
 		return firstName;

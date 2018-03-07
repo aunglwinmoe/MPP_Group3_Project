@@ -1,14 +1,14 @@
 package edu.mum.group3.bean;
 
 public class ServiceTypeBean {
-	private String serviceTypeId;
+	private Integer id;
 	private String serviceTypeName;
-
-	public String getServiceTypeId() {
-		return serviceTypeId;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setServiceTypeId(String serviceTypeId) {
-		this.serviceTypeId = serviceTypeId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getServiceTypeName() {
 		return serviceTypeName;

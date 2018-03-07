@@ -10,19 +10,19 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Model Data</h2>
-	<form:form method="POST" action="/group3/saveModel.html" class="col-sm-4">
+	<h2>Add Contract Type Data</h2>
+	<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4">
 		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Model ID:</form:label>
+			<form:label path="id" class="col-sm-5 col-form-label">Contract Type ID:</form:label>
 			<div class="col-sm-7">
-				<form:input path="id" value="${model.id}"
+				<form:input path="id" value="${contractType.id}"
 						readonly="true" class="form-control"/>
 			</div>
 		</div>
 		<div class="form-group row">
-			<form:label path="modelName" class="col-sm-5 col-form-label">Model Name:</form:label>
+			<form:label path="contractTypeName" class="col-sm-5 col-form-label">Contract Type Name:</form:label>
 			<div class="col-sm-7">
-				<form:input path="modelName" value="${model.modelName}"  class="form-control"/>
+				<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control"/>
 			</div>
 		</div>
 		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>

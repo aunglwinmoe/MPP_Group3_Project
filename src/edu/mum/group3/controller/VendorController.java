@@ -31,7 +31,7 @@ public class VendorController {
 	public ModelAndView saveVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Vendor vendor = prepareModel(vendorBean);
 		vendorService.addVendor(vendor);
-		return new ModelAndView("redirect:/add.html");
+		return new ModelAndView("redirect:/vendors.html");
 	}
 
 	@RequestMapping(value = "/vendors", method = RequestMethod.GET)
@@ -54,47 +54,33 @@ public class VendorController {
 	}
 
 	@RequestMapping(value = "/deleteVendor", method = RequestMethod.GET)
-	public ModelAndView editVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
+	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		vendorService.deleteVendor(prepareModel(vendorBean));
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vendor", null);
 		model.put("vendors", prepareListofBean(vendorService.listVendors()));
-		return new ModelAndView("addVendors", model);
+		return new ModelAndView("vendorsList", model);
 	}
 
 	@RequestMapping(value = "/editVendor", method = RequestMethod.GET)
-	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
+	public ModelAndView editVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("vendor", prepareVendorBean(vendorService.getVendor(vendorBean.getVendorId())));
+		model.put("vendor", prepareVendorBean(vendorService.getVendor(vendorBean.getId())));
 		model.put("vendors", prepareListofBean(vendorService.listVendors()));
-		return new ModelAndView("addVendors", model);
+		return new ModelAndView("addVendor", model);
 	}
-
-	// =========================================================================================================================
-
-	@RequestMapping(value = "/vehicles", method = RequestMethod.GET)
-	public ModelAndView listVehicles() {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("vehicles", prepareListofBean(vendorService.listVendors()));
-		return new ModelAndView("vehiclesList", model);
-	}
-
-	@RequestMapping(value = "/odometers", method = RequestMethod.GET)
-	public ModelAndView listVehiclesOdometer() {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("odometers", prepareListofBean(vendorService.listVendors()));
-		return new ModelAndView("vehiclesodometerList", model);
-	}
-
-	// =========================================================================================================================
 
 	private Vendor prepareModel(VendorBean vendorBean) {
 		Vendor vendor = new Vendor();
 		vendor.setVendorAddress(vendorBean.getAddress());
+		vendor.setTitle(vendorBean.getTitle());
+		vendor.setJobPosition(vendorBean.getJobPosition());
+		vendor.setPhone(vendorBean.getPhone());
+		vendor.setEmail(vendorBean.getEmail());
 		vendor.setVendorName(vendorBean.getVendorName());
 		vendor.setSsn(vendorBean.getSsn());
-		vendor.setVendorId(vendorBean.getVendorId());
-		vendorBean.setVendorId(null);
+		vendor.setVendorId(vendorBean.getId());
+		vendorBean.setId(null);
 		return vendor;
 	}
 
@@ -106,7 +92,12 @@ public class VendorController {
 			for (Vendor vendor : vendors) {
 				bean = new VendorBean();
 				bean.setVendorName(vendor.getVendorName());
-				bean.setVendorId(vendor.getVendorId());
+				bean.setId(vendor.getVendorId());
+				bean.setTitle(vendor.getTitle());
+				bean.setJobPosition(vendor.getJobPosition());
+				bean.setPhone(vendor.getPhone());
+				bean.setEmail(vendor.getEmail());
+				bean.setPhone(vendor.getPhone());
 				bean.setAddress(vendor.getVendorAddress());
 				bean.setSsn(vendor.getSsn());
 				beans.add(bean);
@@ -118,9 +109,13 @@ public class VendorController {
 	private VendorBean prepareVendorBean(Vendor vendor) {
 		VendorBean bean = new VendorBean();
 		bean.setAddress(vendor.getVendorAddress());
+		bean.setEmail(vendor.getEmail());
+		bean.setPhone(vendor.getPhone());
+		bean.setJobPosition(vendor.getJobPosition());
+		bean.setTitle(vendor.getTitle());
 		bean.setVendorName(vendor.getVendorName());
 		bean.setSsn(vendor.getSsn());
-		bean.setVendorId(vendor.getVendorId());
+		bean.setId(vendor.getVendorId());
 		return bean;
 	}
 }

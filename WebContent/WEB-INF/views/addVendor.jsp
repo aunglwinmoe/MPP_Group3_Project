@@ -11,40 +11,60 @@
 </head>
 <body>
 	<h2>Add Vendor Data</h2>
-	<form:form method="POST" action="/group3/saveVendor.html">
-		<table>
-			<tr>
-				<td><form:label path="vendorId">Vendor ID:</form:label></td>
-				<td><form:input path="vendorId" value="${vendor.vendorId}"
-						readonly="true" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="vendorName">Vendor Name:</form:label></td>
-				<td><form:input path="vendorName" value="${vendor.vendorName}" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="ssn">Vendor SSN:</form:label></td>
-				<td><form:input path="ssn" value="${vendor.ssn}" /></td>
-			</tr>
-
-			<tr>
-				<td><form:label path="address">Vendor Address:</form:label></td>
-				<td><form:input path="address" value="${vendor.address}" /></td>
-			</tr>
-			<tr>
-				<td>Gender:</td>
-				<td><input type="radio" name="gender" value="Male">Male
-					<input type="radio" name="gender" value="Female">Female</td>
-			</tr>
-			<tr>
-				<td>Gender:</td>
-				<td><select name="gender"><option>Male</option>
-						<option>Female</option></select></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
-			</tr>
-		</table>
+	<form:form method="POST" action="/group3/saveVendor.html" class="col-sm-4">
+		<div class="form-group row">
+			<form:label path="id" class="col-sm-5 col-form-label">Vendor ID:</form:label>
+			<div class="col-sm-7">
+				<form:input path="id" value="${vendor.id}"
+						readonly="true"  class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="vendorName" class="col-sm-5 col-form-label">Vendor Name:</form:label>
+			<div class="col-sm-7">
+				<form:input path="vendorName" value="${vendor.vendorName}"  class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="title" class="col-sm-5 col-form-label">Title:</form:label>
+			<div class="col-sm-7">
+				<select name="title" class="form-control">
+						<option>Mr.</option>
+						<option>Ms.</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="ssn" class="col-sm-5 col-form-label">Vendor SSN:</form:label>
+			<div class="col-sm-7">
+				<form:input path="ssn" value="${vendor.ssn}" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="jobPosition" class="col-sm-5 col-form-label">Job Position:</form:label>
+			<div class="col-sm-7">
+				<form:input path="jobPosition" value="${vendor.jobPosition}"  class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="phone" class="col-sm-5 col-form-label">Phone:</form:label>
+			<div class="col-sm-7">
+				<form:input path="phone" value="${vendor.phone}"  class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="email" class="col-sm-5 col-form-label">Email:</form:label>
+			<div class="col-sm-7">
+				<form:input path="email" value="${vendor.email}"  class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<form:label path="address" class="col-sm-5 col-form-label">Vendor Address:</form:label>
+			<div class="col-sm-7">
+				<form:input path="address" value="${vendor.address}"  class="form-control"/>
+			</div>
+		</div>
+		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
 	</form:form>
 </body>
 </html>

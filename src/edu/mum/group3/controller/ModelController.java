@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -45,27 +47,27 @@ public class ModelController {
 	}
 
 	@RequestMapping(value = "/deleteModel", method = RequestMethod.GET)
-	public ModelAndView editModel(@ModelAttribute("command") ModelBean modelBean, BindingResult result) {
+	public ModelAndView deleteModel(@ModelAttribute("command") ModelBean modelBean, BindingResult result) {
 		modelService.deleteModel(prepareModel(modelBean));
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("model", null);
+		model.put("model", "null");
 		model.put("models", prepareListofBean(modelService.listModels()));
-		return new ModelAndView("addMakes", model);
+		return new ModelAndView("modelsList", model);
 	}
 
 	@RequestMapping(value = "/editModel", method = RequestMethod.GET)
-	public ModelAndView deleteModel(@ModelAttribute("command") Model modelBean, BindingResult result) {
+	public ModelAndView editModel(@ModelAttribute("command") ModelBean modelBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("model", prepareModelBean(modelService.getModel(modelBean.getModelId())));
+		model.put("model", prepareModelBean(modelService.getModel(modelBean.getId())));
 		model.put("models", prepareListofBean(modelService.listModels()));
-		return new ModelAndView("addModels", model);
+		return new ModelAndView("addModel", model);
 	}
 
 	private Model prepareModel(ModelBean modelBean) {
 		Model model = new Model();
+		model.setModelId(modelBean.getId());
 		model.setModelName(modelBean.getModelName());
-		model.setModelId(modelBean.getModelId());
-		modelBean.setModelId(null);
+		modelBean.setId(null);
 		return model;
 	}
 
@@ -77,7 +79,7 @@ public class ModelController {
 			for (Model model : models) {
 				bean = new ModelBean();
 				bean.setModelName(model.getModelName());
-				bean.setModelId(model.getModelId());
+				bean.setId(model.getModelId());
 				beans.add(bean);
 			}
 		}
@@ -87,7 +89,7 @@ public class ModelController {
 	private ModelBean prepareModelBean(Model model) {
 		ModelBean bean = new ModelBean();
 		bean.setModelName(model.getModelName());
-		bean.setModelId(model.getModelId());
+		bean.setId(model.getModelId());
 		return bean;
 	}
 }
