@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h2>Add Vendor Data</h2>
-	<form:form method="POST" action="/group3/save.html">
+	<form:form method="POST" action="/group3/saveVendor.html">
 		<table>
 			<tr>
 				<td><form:label path="vendorId">Vendor ID:</form:label></td>

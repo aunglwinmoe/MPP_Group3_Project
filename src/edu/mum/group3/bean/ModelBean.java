@@ -1,15 +1,15 @@
 package edu.mum.group3.bean;
 
 public class ModelBean {
-	private String modelId;
+	private Integer modelId;
 	private String modelName;
-	//private Make make;
+	//private Integer makeId;
 	//private List<Vendor> vendors;
 	
-	public String getModelId() {
+	public Integer getModelId() {
 		return modelId;
 	}
-	public void setModelId(String modelId) {
+	public void setModelId(Integer modelId) {
 		this.modelId = modelId;
 	}
 	public String getModelName() {

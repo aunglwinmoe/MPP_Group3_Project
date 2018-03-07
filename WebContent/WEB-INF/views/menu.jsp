@@ -6,9 +6,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vehicle Management System</title>
-
 <link rel="stylesheet" type="text/css" href="css/design.css">
-<script language="JavaScript" type="text/JavaScript" src="css/design.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+<script type="text/JavaScript" src="css/design.js"></script>
 </head>
 <body>
 	<div class="topnav" id="myTopnav">
@@ -46,7 +46,7 @@
 				Configuration <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="#">Vehicle Model</a> <a href="#">Vehicle Brand/Make</a> <a
+				<a href="models.html">Vehicle Model</a> <a href="#">Vehicle Brand/Make</a> <a
 					href="#">Service Types</a><a href="#">Contract Type</a>
 			</div>
 		</div>
@@ -63,7 +63,3 @@
 		<a href="#mapping">Vehicle Unit Mapping</a> <a
 			href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
-
-	
-</body>
-</html>

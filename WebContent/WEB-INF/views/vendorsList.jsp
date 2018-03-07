@@ -26,7 +26,7 @@
 				<td><c:out value="${vendor.name}"/></td>
 				<td><c:out value="${vendor.ssn}"/></td>
 				<td><c:out value="${vendor.address}"/></td>
-				<td align="center"><a href="edit.html?id=${vendor.id}">Edit</a> | <a href="delete.html?id=${vendor.id}">Delete</a></td>
+				<td align="center"><a href="editVendor.html?id=${vendor.id}">Edit</a> | <a href="deleteVendor.html?id=${vendor.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>

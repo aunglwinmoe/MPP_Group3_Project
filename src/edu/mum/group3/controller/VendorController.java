@@ -27,7 +27,7 @@ public class VendorController {
 	@Autowired
 	private VendorService vendorService;
 
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveVendor", method = RequestMethod.POST)
 	public ModelAndView saveVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Vendor vendor = prepareModel(vendorBean);
 		vendorService.addVendor(vendor);
@@ -41,11 +41,11 @@ public class VendorController {
 		return new ModelAndView("vendorsList", model);
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/addVendor", method = RequestMethod.GET)
 	public ModelAndView addVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vendors", prepareListofBean(vendorService.listVendors()));
-		return new ModelAndView("addVendors", model);
+		return new ModelAndView("addVendor", model);
 	}
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -53,7 +53,7 @@ public class VendorController {
 		return new ModelAndView("index");
 	}
 
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteVendor", method = RequestMethod.GET)
 	public ModelAndView editVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		vendorService.deleteVendor(prepareModel(vendorBean));
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -62,7 +62,7 @@ public class VendorController {
 		return new ModelAndView("addVendors", model);
 	}
 
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/editVendor", method = RequestMethod.GET)
 	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vendor", prepareVendorBean(vendorService.getVendor(vendorBean.getVendorId())));

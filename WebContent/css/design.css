@@ -30,6 +30,7 @@
 .dropdown {
     float: left;
     overflow: hidden;
+    position: static !important;
 }
 
 /* Style the dropdown button to fit inside the topnav */
@@ -110,4 +111,8 @@
     width: 100%;
     text-align: left;
   }
+}
+
+.page-title {
+	margin: 20px 0;
 }
