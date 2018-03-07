@@ -65,7 +65,7 @@ public class VendorController {
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("vendor", prepareVendorBean(vendorService.getVendor(vendorBean.getId())));
+		model.put("vendor", prepareVendorBean(vendorService.getVendor(vendorBean.getVendorId())));
 		model.put("vendors", prepareListofBean(vendorService.listVendors()));
 		return new ModelAndView("addVendors", model);
 	}
@@ -91,10 +91,10 @@ public class VendorController {
 	private Vendor prepareModel(VendorBean vendorBean) {
 		Vendor vendor = new Vendor();
 		vendor.setVendorAddress(vendorBean.getAddress());
-		vendor.setVendorName(vendorBean.getName());
+		vendor.setVendorName(vendorBean.getVendorName());
 		vendor.setSsn(vendorBean.getSsn());
-		vendor.setVendorId(vendorBean.getId());
-		vendorBean.setId(null);
+		vendor.setVendorId(vendorBean.getVendorId());
+		vendorBean.setVendorId(null);
 		return vendor;
 	}
 
@@ -105,8 +105,8 @@ public class VendorController {
 			VendorBean bean = null;
 			for (Vendor vendor : vendors) {
 				bean = new VendorBean();
-				bean.setName(vendor.getVendorName());
-				bean.setId(vendor.getVendorId());
+				bean.setVendorName(vendor.getVendorName());
+				bean.setVendorId(vendor.getVendorId());
 				bean.setAddress(vendor.getVendorAddress());
 				bean.setSsn(vendor.getSsn());
 				beans.add(bean);
@@ -118,9 +118,9 @@ public class VendorController {
 	private VendorBean prepareVendorBean(Vendor vendor) {
 		VendorBean bean = new VendorBean();
 		bean.setAddress(vendor.getVendorAddress());
-		bean.setName(vendor.getVendorName());
+		bean.setVendorName(vendor.getVendorName());
 		bean.setSsn(vendor.getSsn());
-		bean.setId(vendor.getVendorId());
+		bean.setVendorId(vendor.getVendorId());
 		return bean;
 	}
 }

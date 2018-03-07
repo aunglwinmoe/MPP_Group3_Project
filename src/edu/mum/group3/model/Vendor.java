@@ -27,11 +27,24 @@ public class Vendor implements Serializable {
 	@Column(name = "vendorname")
 	private String vendorName;
 
+	@Column(name = "title")
+	private String title;
+	
+	@Column(name = "ssn")
+	private Long ssn;
+	
+	@Column(name = "jobposition")
+	private String jobPosition;
+	
+	@Column(name = "phone")
+	private String phone;
+	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name = "vendoraddress")
 	private String vendorAddress;
 
-	@Column(name = "ssn")
-	private Long ssn;
 
 	public Integer getVendorId() {
 		return vendorId;
@@ -49,12 +62,12 @@ public class Vendor implements Serializable {
 		this.vendorName = vendorName;
 	}
 
-	public String getVendorAddress() {
-		return vendorAddress;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setVendorAddress(String vendorAddress) {
-		this.vendorAddress = vendorAddress;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public Long getSsn() {
@@ -63,6 +76,38 @@ public class Vendor implements Serializable {
 
 	public void setSsn(Long ssn) {
 		this.ssn = ssn;
+	}
+
+	public String getJobPosition() {
+		return jobPosition;
+	}
+
+	public void setJobPosition(String jobPosition) {
+		this.jobPosition = jobPosition;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getVendorAddress() {
+		return vendorAddress;
+	}
+
+	public void setVendorAddress(String vendorAddress) {
+		this.vendorAddress = vendorAddress;
 	}
 
 }
