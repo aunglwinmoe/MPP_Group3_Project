@@ -14,13 +14,13 @@
 	<form:form method="POST" action="/group3/save.html">
 		<table>
 			<tr>
-				<td><form:label path="id">Vendor ID:</form:label></td>
-				<td><form:input path="id" value="${vendor.id}"
+				<td><form:label path="vendorId">Vendor ID:</form:label></td>
+				<td><form:input path="vendorId" value="${vendor.vendorId}"
 						readonly="true" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="name">Vendor Name:</form:label></td>
-				<td><form:input path="name" value="${vendor.name}" /></td>
+				<td><form:label path="vendorName">Vendor Name:</form:label></td>
+				<td><form:input path="vendorName" value="${vendor.vendorName}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="ssn">Vendor SSN:</form:label></td>

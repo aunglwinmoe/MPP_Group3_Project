@@ -1,13 +1,13 @@
 package edu.mum.group3.bean;
 
 public class MakeBean {
-	private String makeId;
+	private Integer makeId;
 	private String makeName;
 	
-	public String getMakeId() {
+	public Integer getMakeId() {
 		return makeId;
 	}
-	public void setMakeId(String makeId) {
+	public void setMakeId(Integer makeId) {
 		this.makeId = makeId;
 	}
 	public String getMakeName() {
