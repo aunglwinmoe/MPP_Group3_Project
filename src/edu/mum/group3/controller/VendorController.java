@@ -97,7 +97,7 @@ public class VendorController {
 				bean.setJobPosition(vendor.getJobPosition());
 				bean.setPhone(vendor.getPhone());
 				bean.setEmail(vendor.getEmail());
-				bean.setPhone(vendor.getPhone());
+//				bean.setPhone(vendor.getPhone());
 				bean.setAddress(vendor.getVendorAddress());
 				bean.setSsn(vendor.getSsn());
 				beans.add(bean);

@@ -9,6 +9,16 @@
 <link rel="stylesheet" type="text/css" href="css/design.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
 <script type="text/JavaScript" src="css/design.js"></script>
+
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.css">
+
+<script type="text/javascript" charset="utf8"
+	src="DataTables/datatables.js"></script>
 </head>
 <body>
 	<div class="topnav" id="myTopnav">

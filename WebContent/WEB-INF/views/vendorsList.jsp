@@ -6,15 +6,6 @@
 <head>
 <title>All Vendors</title>
 <jsp:include page="menu.jsp" />
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.css">
-
-<script type="text/javascript" charset="utf8"
-	src="DataTables/datatables.js"></script>
 </head>
 <body>
 	<h1>List Vendors</h1>
@@ -59,21 +50,6 @@
 	$(document).ready(
 			function() {
 				$('#vendorListTable').DataTable();
-
-				var $submit = $("#submit_prog").hide(), $cbs = $(
-						'input[name="prog"]').click(function() {
-					$submit.toggle($cbs.is(":checked"));
-				});
-
-				$cball = $('input[name="checkall"]').click(function() {
-					$submit.toggle($cball.is(":checked"));
-				});
-
-				$("#checkAll").change(
-						function() {
-							$("input:checkbox").prop('checked',
-									$(this).prop("checked"));
-						});
 			});
 </script>
 </html>
