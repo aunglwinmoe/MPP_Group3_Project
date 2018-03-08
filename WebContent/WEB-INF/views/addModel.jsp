@@ -10,22 +10,28 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Model Data</h2>
-	<form:form method="POST" action="/group3/saveModel.html" class="col-sm-4">
-		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Model ID:</form:label>
-			<div class="col-sm-7">
-				<form:input path="id" value="${model.id}"
-						readonly="true" class="form-control"/>
+	<div class="container">
+		<h3>Create Vehicle Model</h3>
+		<form:form method="POST" action="/group3/saveModel.html" class="col-sm-4">
+			<form:input path="id" value="${model.id}" type="hidden"/>
+			<div class="form-group row">
+				<form:label path="modelName" class="col-sm-5 col-form-label">Model name:</form:label>
+				<div class="col-sm-7">
+					<form:input path="modelName" value="${model.modelName}"  class="form-control"/>
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="modelName" class="col-sm-5 col-form-label">Model Name:</form:label>
-			<div class="col-sm-7">
-				<form:input path="modelName" value="${model.modelName}"  class="form-control"/>
+			<div class="form-group row">
+				<form:label path="modelName" class="col-sm-5 col-form-label">Make:</form:label>
+				<div class="col-sm-7">
+					<form:select path="modelName" class="form-control">
+						<c:forEach items="${makeList}" var="make">
+							<form:option value="${make.makeId}">${make.makeName}</form:option>
+						</c:forEach>
+					</form:select>
+				</div>
 			</div>
-		</div>
-		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
-	</form:form>
+			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
+		</form:form>
+	</div>
 </body>
 </html>

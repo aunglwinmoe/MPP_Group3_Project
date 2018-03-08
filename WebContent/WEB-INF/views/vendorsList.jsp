@@ -6,54 +6,48 @@
 <head>
 <title>All Vendors</title>
 <jsp:include page="menu.jsp" />
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.css">
-
-<script type="text/javascript" charset="utf8"
-	src="DataTables/datatables.js"></script>
 </head>
 <body>
-	<h1>List Vendors</h1>
-	<a href="addVendor.html" class="btn btn-primary mb-2">Add More
-		Vendor</a>
-
-	<c:if test="${!empty vendors}">
-		<table class="table table-bordered" id="vendorListTable">
-			<thead>
-				<tr>
-					<th>Vendor ID</th>
-					<th>Name</th>
-					<th>Title</th>
-					<th>SSN</th>
-					<th>Job Position</th>
-					<th>Phone</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${vendors}" var="vendor">
+	<div class="container">
+		<h3 class="page-title">List Vendors</h3>
+		<a href="addVendor.html" class="btn btn-primary mb-2">Add More Vendor</a>
+	
+		<c:if test="${!empty vendors}">
+			<table class="table table-hover" id="vendorListTable">
+				<thead>
 					<tr>
-						<td><c:out value="${vendor.id}" /></td>
-						<td><c:out value="${vendor.vendorName}" /></td>
-						<td><c:out value="${vendor.title}" /></td>
-						<td><c:out value="${vendor.ssn}" /></td>
-						<td><c:out value="${vendor.jobPosition}" /></td>
-						<td><c:out value="${vendor.phone}" /></td>
-						<td><c:out value="${vendor.email}" /></td>
-						<td><c:out value="${vendor.address}" /></td>
-						<td align="center"><a href="editVendor.html?id=${vendor.id}">Edit</a>
-							| <a href="deleteVendor.html?id=${vendor.id}">Delete</a></td>
+						<!-- <th>Vendor ID</th> -->
+						<th>Name</th>
+						<th>Title</th>
+						<th>SSN</th>
+						<th>Job Position</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<th>Address</th>
+						<th></th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</c:if>
+				</thead>
+				<tbody>
+					<c:forEach items="${vendors}" var="vendor">
+						<tr>
+							<%-- <td><c:out value="${vendor.id}" /></td> --%>
+							<td><c:out value="${vendor.vendorName}" /></td>
+							<td><c:out value="${vendor.title}" /></td>
+							<td><c:out value="${vendor.ssn}" /></td>
+							<td><c:out value="${vendor.jobPosition}" /></td>
+							<td><c:out value="${vendor.phone}" /></td>
+							<td><c:out value="${vendor.email}" /></td>
+							<td><c:out value="${vendor.address}" /></td>
+							<td align="center">
+								<a href="editVendor.html?id=${vendor.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
+								<a href="deleteVendor.html?id=${vendor.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 <script type="text/javascript">
 	$(document).ready(

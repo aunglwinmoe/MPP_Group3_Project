@@ -8,12 +8,13 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-
-	<h2>
-		1. <a href="vendors.html">List of Vendors</a>
-	</h2>
-	<h2>
-		2. <a href="add.html">Add Vendor</a>
-	</h2>
+	<div class="container">
+		<h3 class="page-title">
+			1. <a href="vendors.html">List of Vendors</a>
+		</h3>
+		<h3>
+			2. <a href="add.html">Add Vendor</a>
+		</h3>
+	</div>	
 </body>
 </html>

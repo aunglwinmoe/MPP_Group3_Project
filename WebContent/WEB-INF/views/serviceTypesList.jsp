@@ -8,25 +8,33 @@
 <jsp:include page="menu.jsp" />
 </head>
 <body>
-<h1 class="page-title">List Service Types</h1>
-<a href="addServiceType.html" class="btn btn-primary mb-2">Create</a>
-
-<c:if test="${!empty serviceTypes}">
-	<table class="table table-bordered">
-		<tr>
-			<th>Service Type ID</th>
-			<th>Service Type Name</th>
-			<th></th>
-		</tr>
-
-		<c:forEach items="${serviceTypes}" var="serviceType">
-			<tr>
-				<td><c:out value="${serviceType.id}"/></td>
-				<td><c:out value="${serviceType.serviceTypeName}"/></td>
-				<td align="center"><a href="editServiceType.html?id=${serviceType.id}">Edit</a> | <a href="deleteServiceType.html?id=${serviceType.id}">Delete</a></td>
-			</tr>
-		</c:forEach>
-	</table>
-</c:if>
+	<div class="container">
+		<h3 class="page-title">List Service Types</h3>
+		<a href="addServiceType.html" class="btn btn-primary mb-2">Create</a>
+		
+		<c:if test="${!empty serviceTypes}">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Service Type ID</th>
+						<!-- <th>Service Type Name</th> -->
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${serviceTypes}" var="serviceType">
+						<tr>
+							<%-- <td><c:out value="${serviceType.id}"/></td> --%>
+							<td><c:out value="${serviceType.serviceTypeName}"/></td>
+							<td align="center">
+								<a href="editServiceType.html?id=${serviceType.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
+								<a href="deleteServiceType.html?id=${serviceType.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 </html>
