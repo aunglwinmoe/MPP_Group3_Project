@@ -53,21 +53,6 @@
 	$(document).ready(
 			function() {
 				$('#vendorListTable').DataTable();
-
-				var $submit = $("#submit_prog").hide(), $cbs = $(
-						'input[name="prog"]').click(function() {
-					$submit.toggle($cbs.is(":checked"));
-				});
-
-				$cball = $('input[name="checkall"]').click(function() {
-					$submit.toggle($cball.is(":checked"));
-				});
-
-				$("#checkAll").change(
-						function() {
-							$("input:checkbox").prop('checked',
-									$(this).prop("checked"));
-						});
 			});
 </script>
 </html>
