@@ -25,6 +25,8 @@ public class ModelController {
 
 	@Autowired
 	private ModelService modelService;
+	
+	@Autowired
 	private MakeService makeService;
 
 	@RequestMapping(value = "/saveModel", method = RequestMethod.POST)
@@ -92,7 +94,7 @@ public class ModelController {
 			ModelBean bean = null;
 			for (Model model : models) {
 				bean = new ModelBean();
-				bean.setMakeName(makeService.getMake(model.getMakeId()).getMakeName());
+				bean.setMakeName(model.getModelName());
 				bean.setModelName(model.getModelName());
 				bean.setId(model.getModelId());
 				beans.add(bean);

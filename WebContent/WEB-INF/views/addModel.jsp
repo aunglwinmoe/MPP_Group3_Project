@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		<h3>Create Vehicle Model</h3>
+		<h3 class="page-title">Create Vehicle Model</h3>
 		<form:form method="POST" action="/group3/saveModel.html" class="col-sm-4">
 			<form:input path="id" value="${model.id}" type="hidden"/>
 			<div class="form-group row">
@@ -24,8 +24,8 @@
 				<form:label path="modelName" class="col-sm-5 col-form-label">Make:</form:label>
 				<div class="col-sm-7">
 					<form:select path="modelName" class="form-control">
-						<c:forEach items="${makeList}" var="make">
-							<form:option value="${make.makeId}">${make.makeName}</form:option>
+						<c:forEach items="${makes}" var="make">
+							<form:option value="${make.id}">${make.makeName}</form:option>
 						</c:forEach>
 					</form:select>
 				</div>
