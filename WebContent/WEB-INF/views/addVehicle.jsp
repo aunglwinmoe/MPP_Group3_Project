@@ -129,7 +129,11 @@
 					class="form-control" />
 			</div>
 		</div>
-		<input type="submit" value="Submit" class="btn btn-primary mb-2" />
+
+		<center>
+			<input type="submit" value="Save" class="btn btn-primary mb-2" />
+		</center>
+
 	</form:form>
 </body>
 </html>
