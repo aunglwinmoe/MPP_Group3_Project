@@ -54,7 +54,7 @@
 				Logs <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="#">Vehicle Fuel Logs</a> <a href="#">Vehicles Services
+				<a href="#">Vehicle Fuel Logs</a> <a href="serviceLogs.html">Vehicles Services
 					Logs</a>
 			</div>
 		</div>

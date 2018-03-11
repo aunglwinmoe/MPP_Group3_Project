@@ -11,11 +11,11 @@
 </head>
 <body>
 	<div class="container">
-		<h3 class="page-title">Add Contract Type Data</h3>
+		<h3 class="page-title">Create Contract Type</h3>
 		<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4">
 			<form:input path="id" value="${contractType.id}" type="hidden"/>
 			<div class="form-group row">
-				<form:label path="contractTypeName" class="col-sm-5 col-form-label">Contract Type Name:</form:label>
+				<form:label path="contractTypeName" class="col-sm-5 col-form-label">Name:</form:label>
 				<div class="col-sm-7">
 					<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control"/>
 				</div>

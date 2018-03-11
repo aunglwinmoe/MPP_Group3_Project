@@ -23,7 +23,7 @@
 			<div class="form-group row">
 				<form:label path="modelName" class="col-sm-5 col-form-label">Make:</form:label>
 				<div class="col-sm-7">
-					<form:select path="modelName" class="form-control">
+					<form:select path="makeId" class="form-control">
 						<c:forEach items="${makes}" var="make">
 							<form:option value="${make.id}">${make.makeName}</form:option>
 						</c:forEach>

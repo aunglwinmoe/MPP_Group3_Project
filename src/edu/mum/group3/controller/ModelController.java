@@ -83,6 +83,7 @@ public class ModelController {
 		Model model = new Model();
 		model.setModelId(modelBean.getId());
 		model.setModelName(modelBean.getModelName());
+		model.setMakeId(modelBean.getMakeId());
 		modelBean.setId(null);
 		return model;
 	}
@@ -94,7 +95,7 @@ public class ModelController {
 			ModelBean bean = null;
 			for (Model model : models) {
 				bean = new ModelBean();
-				bean.setMakeName(model.getModelName());
+				bean.setMakeName(makeService.getMake(model.getMakeId()).getMakeName());
 				bean.setModelName(model.getModelName());
 				bean.setId(model.getModelId());
 				beans.add(bean);

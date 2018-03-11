@@ -1,6 +1,6 @@
 package edu.mum.group3.bean;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class UserBean {
 	private Integer id;
@@ -8,7 +8,7 @@ public class UserBean {
 	private String lastName;
 	private String userName;
 	private String password;
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	public Integer getId() {
 		return id;
@@ -40,12 +40,13 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+	
 	
 	
 }

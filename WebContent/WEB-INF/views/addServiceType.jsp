@@ -11,11 +11,11 @@
 </head>
 <body>
 	<div class="container">
-		<h3 class="page-title">Add Service Type Data</h3>
+		<h3 class="page-title">Create Service Type</h3>
 		<form:form method="POST" action="/group3/saveServiceType.html" class="col-sm-4">
 			<form:input path="id" value="${serviceType.id}" type="hidden"/>
 			<div class="form-group row">
-				<form:label path="serviceTypeName" class="col-sm-5 col-form-label">Service Type Name:</form:label>
+				<form:label path="serviceTypeName" class="col-sm-5 col-form-label">Name:</form:label>
 				<div class="col-sm-7">
 					<form:input path="serviceTypeName" value="${serviceType.serviceTypeName}"  class="form-control"/>
 				</div>

@@ -5,6 +5,7 @@ import java.util.List;
 import edu.mum.group3.model.ContractType;
 
 public interface ContractTypeService {
+	
 	public void addContractType(ContractType contractType);
 
 	public List<ContractType> listContractTypes();
