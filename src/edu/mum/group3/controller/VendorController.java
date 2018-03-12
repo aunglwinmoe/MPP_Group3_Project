@@ -74,7 +74,6 @@ public class VendorController {
 		Vendor vendor = new Vendor();
 		vendor.setVendorAddress(vendorBean.getAddress());
 		vendor.setTitle(vendorBean.getTitle());
-		vendor.setJobPosition(vendorBean.getJobPosition());
 		vendor.setPhone(vendorBean.getPhone());
 		vendor.setEmail(vendorBean.getEmail());
 		vendor.setVendorName(vendorBean.getVendorName());
@@ -94,12 +93,10 @@ public class VendorController {
 				bean.setVendorName(vendor.getVendorName());
 				bean.setId(vendor.getVendorId());
 				bean.setTitle(vendor.getTitle());
-				bean.setJobPosition(vendor.getJobPosition());
+				bean.setSsn(vendor.getSsn());
 				bean.setPhone(vendor.getPhone());
 				bean.setEmail(vendor.getEmail());
-//				bean.setPhone(vendor.getPhone());
 				bean.setAddress(vendor.getVendorAddress());
-				bean.setSsn(vendor.getSsn());
 				beans.add(bean);
 			}
 		}
@@ -111,7 +108,6 @@ public class VendorController {
 		bean.setAddress(vendor.getVendorAddress());
 		bean.setEmail(vendor.getEmail());
 		bean.setPhone(vendor.getPhone());
-		bean.setJobPosition(vendor.getJobPosition());
 		bean.setTitle(vendor.getTitle());
 		bean.setVendorName(vendor.getVendorName());
 		bean.setSsn(vendor.getSsn());

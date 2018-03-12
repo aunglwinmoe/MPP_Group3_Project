@@ -20,7 +20,6 @@
 						<th>Name</th>
 						<th>Title</th>
 						<th>SSN</th>
-						<th>Job Position</th>
 						<th>Phone</th>
 						<th>Email</th>
 						<!-- <th>Address</th> -->
@@ -34,7 +33,6 @@
 							<td><c:out value="${vendor.vendorName}" /></td>
 							<td><c:out value="${vendor.title}" /></td>
 							<td><c:out value="${vendor.ssn}" /></td>
-							<td><c:out value="${vendor.jobPosition}" /></td>
 							<td><c:out value="${vendor.phone}" /></td>
 							<td><c:out value="${vendor.email}" /></td>
 							<%-- <td><c:out value="${vendor.address}" /></td> --%>
