@@ -25,6 +25,9 @@ public class Model implements Serializable{
 
 	@Column(name = "modelname")
 	private String modelName;
+	
+	@Column(name = "makeid")
+	private Integer makeId;
 
 	public Integer getModelId() {
 		return modelId;
@@ -40,6 +43,14 @@ public class Model implements Serializable{
 
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
+	}
+
+	public Integer getMakeId() {
+		return makeId;
+	}
+
+	public void setMakeId(Integer makeId) {
+		this.makeId = makeId;
 	}
 
 	

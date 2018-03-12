@@ -2,26 +2,41 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<h1 align="center">Vehicle Management System</h1>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vehicle Management System</title>
 <link rel="stylesheet" type="text/css" href="css/design.css">
-<link rel="stylesheet" type="text/css"
-	href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/datatables/datatables.css">
 <script type="text/JavaScript" src="css/design.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="css/datatables/datatables.js"></script>
+<script type="text/javascript" charset="utf8" src="css/fontawesome/fontawesome-all.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$('.table').DataTable();
 
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+				var $submit = $("#submit_prog").hide(), $cbs = $(
+						'input[name="prog"]').click(function() {
+					$submit.toggle($cbs.is(":checked"));
+				});
 
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.css">
+				$cball = $('input[name="checkall"]').click(function() {
+					$submit.toggle($cball.is(":checked"));
+				});
 
-<script type="text/javascript" charset="utf8"
-	src="DataTables/datatables.js"></script>
+				$("#checkAll").change(
+						function() {
+							$("input:checkbox").prop('checked',
+									$(this).prop("checked"));
+						});
+			});
+</script>
 </head>
 <body>
+<h1 align="center" class="page-title">Vehicle Management System</h1>
 	<div class="topnav" id="myTopnav">
 
 		<div class="dropdown">
@@ -40,8 +55,8 @@
 				Logs <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="fuelLogs.html">Vehicle Fuel Logs</a> <a href="#">Vehicles
-					Services Logs</a>
+				<a href="fuelLogs.html">Vehicle Fuel Logs</a> <a href="serviceLogs.html">Vehicles Services
+					Logs</a>
 			</div>
 		</div>
 		<div class="dropdown">

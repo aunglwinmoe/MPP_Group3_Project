@@ -10,22 +10,18 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Contract Type Data</h2>
-	<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4">
-		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Contract Type ID:</form:label>
-			<div class="col-sm-7">
-				<form:input path="id" value="${contractType.id}"
-						readonly="true" class="form-control"/>
+	<div class="container">
+		<h3 class="page-title">Create Contract Type</h3>
+		<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4">
+			<form:input path="id" value="${contractType.id}" type="hidden"/>
+			<div class="form-group row">
+				<form:label path="contractTypeName" class="col-sm-5 col-form-label">Name:</form:label>
+				<div class="col-sm-7">
+					<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control"/>
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="contractTypeName" class="col-sm-5 col-form-label">Contract Type Name:</form:label>
-			<div class="col-sm-7">
-				<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control"/>
-			</div>
-		</div>
-		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
-	</form:form>
+			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
+		</form:form>
+	</div>
 </body>
 </html>

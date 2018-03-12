@@ -1,6 +1,10 @@
+h1, h3 {
+	color: #875A7B !important;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #875A7B;
     overflow: hidden;
 }
 
@@ -17,7 +21,7 @@
 
 /* Add an active class to highlight the current page */
 .active {
-    background-color: #333;
+    background-color: #875A7B;
     color: white;
 }
 
@@ -40,7 +44,7 @@
     outline: none;
     color: white;
     padding: 14px 16px;
-    background-color: #333;
+    background-color: #875A7B;
     font-family: inherit;
     margin: 0;
 }
@@ -67,7 +71,7 @@
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: #555;
+    background-color: #875A7B;
     color: white;
 }
 
@@ -116,3 +120,8 @@
 .page-title {
 	margin: 20px 0;
 }
+
+.icon {
+	padding: 0 5px;
+}
+

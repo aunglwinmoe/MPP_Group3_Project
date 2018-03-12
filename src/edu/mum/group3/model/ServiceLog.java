@@ -1,6 +1,7 @@
 package edu.mum.group3.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,9 +21,94 @@ public class ServiceLog implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "modelid")
-	private Integer modelId;
+	@Column(name = "logid")
+	private Integer logId;
+	
+	@Column(name = "vehicleid")
+	private Integer vehicleId;
+	
+	@Column(name = "servicetypeid")
+	private Integer serviceTypeId;
 
-	@Column(name = "modelname")
-	private String modelName;
+	@Column(name = "totalprice")
+	private double totalPrice;
+	
+	@Column(name = "odometerval")
+	private double odometerVal;
+	
+	@Column(name = "date")
+	private LocalDate date;
+	
+	@Column(name = "vendorid")
+	private Integer vendorId;
+	
+	@Column(name = "invoiceref")
+	private String invoiceRef;
+
+	
+	public Integer getLogId() {
+		return logId;
+	}
+
+	public void setLogId(Integer logId) {
+		this.logId = logId;
+	}
+
+	public Integer getVehicleId() {
+		return vehicleId;
+	}
+
+	public void setVehicleId(Integer vehicleId) {
+		this.vehicleId = vehicleId;
+	}
+
+	public Integer getServiceTypeId() {
+		return serviceTypeId;
+	}
+
+	public void setServiceTypeId(Integer serviceTypeId) {
+		this.serviceTypeId = serviceTypeId;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public double getOdometerVal() {
+		return odometerVal;
+	}
+
+	public void setOdometerVal(double odometerVal) {
+		this.odometerVal = odometerVal;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public Integer getVendorId() {
+		return vendorId;
+	}
+
+	public void setVendorId(Integer vendorId) {
+		this.vendorId = vendorId;
+	}
+
+	public String getInvoiceRef() {
+		return invoiceRef;
+	}
+
+	public void setInvoiceRef(String invoiceRef) {
+		this.invoiceRef = invoiceRef;
+	}
+
+	
 }

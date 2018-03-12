@@ -10,22 +10,18 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Service Type Data</h2>
-	<form:form method="POST" action="/group3/saveServiceType.html" class="col-sm-4">
-		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Service Type ID:</form:label>
-			<div class="col-sm-7">
-				<form:input path="id" value="${serviceType.id}"
-						readonly="true" class="form-control"/>
+	<div class="container">
+		<h3 class="page-title">Create Service Type</h3>
+		<form:form method="POST" action="/group3/saveServiceType.html" class="col-sm-4">
+			<form:input path="id" value="${serviceType.id}" type="hidden"/>
+			<div class="form-group row">
+				<form:label path="serviceTypeName" class="col-sm-5 col-form-label">Name:</form:label>
+				<div class="col-sm-7">
+					<form:input path="serviceTypeName" value="${serviceType.serviceTypeName}"  class="form-control"/>
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="serviceTypeName" class="col-sm-5 col-form-label">Service Type Name:</form:label>
-			<div class="col-sm-7">
-				<form:input path="serviceTypeName" value="${serviceType.serviceTypeName}"  class="form-control"/>
-			</div>
-		</div>
-		<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
-	</form:form>
+			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
+		</form:form>
+	</div>
 </body>
 </html>

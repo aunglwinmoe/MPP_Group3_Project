@@ -4,29 +4,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>All Models</title>
-<jsp:include page="menu.jsp" />
+	<title>Vehicle Model</title>
+	<jsp:include page="menu.jsp" />
 </head>
 <body>
-<h1 class="page-title">List Models</h1>
-<a href="addModel.html" class="btn btn-primary mb-2">Create</a>
-
-<c:if test="${!empty models}">
-	<table class="table table-bordered">
-		<tr>
-			<th>Model ID</th>
-			<th>Model Name</th>
-			<th></th>
-		</tr>
-
-		<c:forEach items="${models}" var="model">
-			<tr>
-				<td><c:out value="${model.id}"/></td>
-				<td><c:out value="${model.modelName}"/></td>
-				<td align="center"><a href="editModel.html?id=${model.id}">Edit</a> | <a href="deleteModel.html?id=${model.id}">Delete</a></td>
-			</tr>
-		</c:forEach>
-	</table>
-</c:if>
+	<div class="container">
+		<h3 class="page-title">Vehicle Model</h3>
+		<a href="addModel.html" class="btn btn-primary mb-2">Create</a>
+		
+		<c:if test="${!empty models}">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Make</th>
+						<th>Model name</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${models}" var="model">
+						<tr>
+							<td><c:out value="${model.modelName}"/></td>
+							<td><c:out value="${model.makeName}"/></td>
+							<td align="center">
+								<a href="editModel.html?id=${model.id}"><i class="fas fa-pencil-alt"></i></a> 
+								<a href="deleteModel.html?id=${model.id}"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 </html>
