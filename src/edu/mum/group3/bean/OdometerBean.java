@@ -6,6 +6,7 @@ import java.util.Date;
 public class OdometerBean {
 	private Integer id;
 	private Integer vehicleId;
+	private String vehicleName;
 	private double odometerVal;
 	private Date date;
 	private String status;
@@ -26,6 +27,14 @@ public class OdometerBean {
 
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
+	}
+
+	public String getVehicleName() {
+		return vehicleName;
+	}
+
+	public void setVehicleName(String vehicleName) {
+		this.vehicleName = vehicleName;
 	}
 
 	public double getOdometerVal() {

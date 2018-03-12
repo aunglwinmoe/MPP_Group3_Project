@@ -23,8 +23,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import edu.mum.group3.bean.OdometerBean;
+import edu.mum.group3.bean.ServiceTypeBean;
+import edu.mum.group3.bean.VehicleBean;
 import edu.mum.group3.model.Odometer;
+import edu.mum.group3.model.ServiceType;
+import edu.mum.group3.model.Vehicle;
 import edu.mum.group3.service.OdometerService;
+import edu.mum.group3.service.VehicleService;
 
 /**
  * @author Lwin Moe Aung
@@ -35,6 +40,9 @@ public class OdometerController {
 
 	@Autowired
 	private OdometerService odometerService;
+
+	@Autowired
+	private VehicleService vehicleService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
@@ -61,6 +69,7 @@ public class OdometerController {
 	public ModelAndView addOdometer(@ModelAttribute("command") OdometerBean odometerBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("odometers", prepareListofBean(odometerService.listOdometers()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
 		return new ModelAndView("addOdometer", model);
 	}
 
@@ -93,6 +102,21 @@ public class OdometerController {
 		odometer.setOdometerId(odometerBean.getId());
 		odometerBean.setId(null);
 		return odometer;
+	}
+
+	private List<VehicleBean> prepareVehicleListofBean(List<Vehicle> vehicles) {
+		List<VehicleBean> beans = null;
+		if (vehicles != null && !vehicles.isEmpty()) {
+			beans = new ArrayList<VehicleBean>();
+			VehicleBean bean = null;
+			for (Vehicle vehicle : vehicles) {
+				bean = new VehicleBean();
+				bean.setId(vehicle.getVehicleId());
+				bean.setVehicleName(vehicle.getVehicleName());
+				beans.add(bean);
+			}
+		}
+		return beans;
 	}
 
 	private List<OdometerBean> prepareListofBean(List<Odometer> odometers) {
