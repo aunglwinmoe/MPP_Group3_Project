@@ -3,6 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,7 +17,6 @@
 		<form:form method="POST" action="/group3/saveOdometer.html"
 			class="col-sm-4">
 
-			<br />
 			<form:hidden path="id" />
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
@@ -36,8 +36,10 @@
 			<div class="form-group row">
 				<form:label path="date" class="col-sm-5 col-form-label">Date:</form:label>
 				<div class="col-sm-7">
-					<form:input type="date" path="date" value="${odometer.date}"
-						class="form-control" />
+					<fmt:formatDate pattern="yyyy-MM-dd" value="${odometer.date}"
+						var="odometerDate" />
+					<form:input id="date" type="date" path="date"
+						value="${odometerDate}" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group row">
