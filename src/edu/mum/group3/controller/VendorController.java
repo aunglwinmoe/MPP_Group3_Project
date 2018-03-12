@@ -53,6 +53,11 @@ public class VendorController {
 		return new ModelAndView("index");
 	}
 
+	@RequestMapping(value = "/menu", method = RequestMethod.POST)
+	public ModelAndView menu() {
+		return new ModelAndView("menu");
+	}
+
 	@RequestMapping(value = "/deleteVendor", method = RequestMethod.GET)
 	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		vendorService.deleteVendor(prepareModel(vendorBean));
@@ -97,7 +102,7 @@ public class VendorController {
 				bean.setJobPosition(vendor.getJobPosition());
 				bean.setPhone(vendor.getPhone());
 				bean.setEmail(vendor.getEmail());
-//				bean.setPhone(vendor.getPhone());
+				// bean.setPhone(vendor.getPhone());
 				bean.setAddress(vendor.getVendorAddress());
 				bean.setSsn(vendor.getSsn());
 				beans.add(bean);
