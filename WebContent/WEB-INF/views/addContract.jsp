@@ -10,89 +10,91 @@
 <title></title>
 </head>
 <body>
-<br />
-	<h2>Vehicle Contract</h2>
-	<form:form method="POST" action="/group3/saveContract.html"
-		class="col-sm-4">
+	<div class="container">
+		<h3 class="page-title">Vehicle Contract</h3>
+		<form:form method="POST" action="/group3/saveContract.html"
+			class="col-sm-4">
 
-		<br />
-		<form:hidden path="id" />
+			<form:hidden path="id" />
 
-		<div class="form-group row">
-			<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
-			<div class="col-sm-7">
-				<form:input path="vehicleId" value="${contract.vehicleId}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
+				<div class="col-sm-7">
+					<form:input path="vehicleId" value="${contract.vehicleId}"
+						class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="contractTypeId" class="col-sm-5 col-form-label">Contract Type:</form:label>
-			<div class="col-sm-7">
-				<form:input path="contractTypeId" value="${contract.contractTypeId}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="contractTypeId" class="col-sm-5 col-form-label">Contract Type:</form:label>
+				<div class="col-sm-7">
+					<form:input path="contractTypeId"
+						value="${contract.contractTypeId}" class="form-control" />
+				</div>
 			</div>
-		</div>
 
-		<div class="form-group row">
-			<form:label path="odometerAtCreation" class="col-sm-5 col-form-label">Odometer At Creation:</form:label>
-			<div class="col-sm-7">
-				<form:input path="odometerAtCreation"
-					value="${contract.odometerAtCreation}" class="form-control" />
+			<div class="form-group row">
+				<form:label path="odometerAtCreation"
+					class="col-sm-5 col-form-label">Odometer At Creation:</form:label>
+				<div class="col-sm-7">
+					<form:input path="odometerAtCreation"
+						value="${contract.odometerAtCreation}" class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="invoiceDate" class="col-sm-5 col-form-label">Invoice Date:</form:label>
-			<div class="col-sm-7">
-				<form:input path="invoiceDate" value="${contract.invoiceDate}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="invoiceDate" class="col-sm-5 col-form-label">Invoice Date:</form:label>
+				<div class="col-sm-7">
+					<form:input path="invoiceDate" value="${contract.invoiceDate}"
+						class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="contractStartDate" class="col-sm-5 col-form-label">Contract Start Date:</form:label>
-			<div class="col-sm-7">
-				<form:input path="contractStartDate"
-					value="${contract.contractStartDate}" class="form-control" />
+			<div class="form-group row">
+				<form:label path="contractStartDate" class="col-sm-5 col-form-label">Contract Start Date:</form:label>
+				<div class="col-sm-7">
+					<form:input path="contractStartDate"
+						value="${contract.contractStartDate}" class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="contractExpDate" class="col-sm-5 col-form-label">Contract Expiration Date:</form:label>
-			<div class="col-sm-7">
-				<form:input path="contractExpDate"
-					value="${contract.contractExpDate}" class="form-control" />
+			<div class="form-group row">
+				<form:label path="contractExpDate" class="col-sm-5 col-form-label">Contract Expiration Date:</form:label>
+				<div class="col-sm-7">
+					<form:input path="contractExpDate"
+						value="${contract.contractExpDate}" class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="contractorId" class="col-sm-5 col-form-label">Contractor:</form:label>
-			<div class="col-sm-7">
-				<form:input path="contractorId" value="${contract.contractorId}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="contractorId" class="col-sm-5 col-form-label">Contractor:</form:label>
+				<div class="col-sm-7">
+					<form:input path="contractorId" value="${contract.contractorId}"
+						class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="vendorId" class="col-sm-5 col-form-label">Vendor:</form:label>
-			<div class="col-sm-7">
-				<form:input path="vendorId" value="${contract.vendorId}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="vendorId" class="col-sm-5 col-form-label">Vendor:</form:label>
+				<div class="col-sm-7">
+					<form:input path="vendorId" value="${contract.vendorId}"
+						class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="rentalCost" class="col-sm-5 col-form-label">Rental Fees:</form:label>
-			<div class="col-sm-7">
-				<form:input path="rentalCost" value="${contract.rentalCost}"
-					class="form-control" />
+			<div class="form-group row">
+				<form:label path="rentalCost" class="col-sm-5 col-form-label">Rental Fees:</form:label>
+				<div class="col-sm-7">
+					<form:input path="rentalCost" value="${contract.rentalCost}"
+						class="form-control" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group row">
-			<form:label path="termsAndConditions" class="col-sm-5 col-form-label">Terms And Conditions:</form:label>
-			<div class="col-sm-7">
-				<form:textarea path="termsAndConditions"
-					value="${contract.termsAndConditions}" class="form-control" />
+			<div class="form-group row">
+				<form:label path="termsAndConditions"
+					class="col-sm-5 col-form-label">Terms And Conditions:</form:label>
+				<div class="col-sm-7">
+					<form:textarea path="termsAndConditions"
+						value="${contract.termsAndConditions}" class="form-control" />
+				</div>
 			</div>
-		</div>
 
-		<center>
-			<input type="submit" value="Save" class="btn btn-primary mb-2" />
-		</center>
-	</form:form>
+			<center>
+				<input type="submit" value="Save" class="btn btn-primary mb-2" />
+			</center>
+		</form:form>
+	</div>
 </body>
 </html>
