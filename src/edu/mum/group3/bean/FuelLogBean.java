@@ -17,7 +17,7 @@ public class FuelLogBean {
 	private String invoiceReference;
 	private String otherInfo;
 	private Integer vendorId;
-	private Integer purchaserId;
+	private Integer purchaserId; // remove
 
 	public Integer getId() {
 		return id;
