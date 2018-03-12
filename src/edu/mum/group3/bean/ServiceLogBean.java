@@ -1,6 +1,7 @@
 package edu.mum.group3.bean;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class ServiceLogBean {
 	 private Integer id;
@@ -10,7 +11,7 @@ public class ServiceLogBean {
 	 private String serviceTypeName;
 	 private double totalPrice;
 	 private double odometerVal;
-	 private LocalDate date;
+	 private Date date;
 	 private Integer vendorId;
 	 private String vendorName;
 	 private String invoiceRef;
@@ -56,10 +57,10 @@ public class ServiceLogBean {
 	public void setOdometerVal(double odometerVal) {
 		this.odometerVal = odometerVal;
 	}
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public Integer getVendorId() {

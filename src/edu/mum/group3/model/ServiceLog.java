@@ -2,6 +2,7 @@ package edu.mum.group3.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,7 +38,7 @@ public class ServiceLog implements Serializable{
 	private double odometerVal;
 	
 	@Column(name = "date")
-	private LocalDate date;
+	private Date date;
 	
 	@Column(name = "vendorid")
 	private Integer vendorId;
@@ -86,11 +87,11 @@ public class ServiceLog implements Serializable{
 		this.odometerVal = odometerVal;
 	}
 
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
