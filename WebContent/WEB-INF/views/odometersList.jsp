@@ -9,36 +9,38 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<h2 align="left">Odometers</h2>
-	<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
+	<div class="container">
+		<h3 class="page-title">Odometers</h3>
+		<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
 
-	<c:if test="${!empty odometers}">
-		<table class="table table-bordered" id="odometerListTable">
-			<thead>
-				<tr>
-					<th>Vehicle</th>
-					<th>Odometer</th>
-					<th>Date</th>
-					<th>Status</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${odometers}" var="odometer">
+		<c:if test="${!empty odometers}">
+			<table class="table table-hover" id="odometerListTable">
+				<thead>
 					<tr>
-						<td><c:out value="${odometer.vehicleId}" /></td>
-						<td><c:out value="${odometer.odometerVal}" /></td>
-						<td><c:out value="${odometer.date}" /></td>
-						<td><c:out value="${odometer.status}" /></td>
-
-						<td align="center"><a
-							href="editOdometer.html?id=${odometer.id}">Edit</a> | <a
-							href="deleteOdometer.html?id=${odometer.id}">Delete</a></td>
+						<th>Vehicle</th>
+						<th>Odometer</th>
+						<th>Date</th>
+						<th>Status</th>
+						<th></th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</c:if>
+				</thead>
+				<tbody>
+					<c:forEach items="${odometers}" var="odometer">
+						<tr>
+							<td><c:out value="${odometer.vehicleId}" /></td>
+							<td><c:out value="${odometer.odometerVal}" /></td>
+							<td><c:out value="${odometer.date}" /></td>
+							<td><c:out value="${odometer.status}" /></td>
+
+							<td align="center"><a
+								href="editOdometer.html?id=${odometer.id}">Edit</a> | <a
+								href="deleteOdometer.html?id=${odometer.id}">Delete</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {

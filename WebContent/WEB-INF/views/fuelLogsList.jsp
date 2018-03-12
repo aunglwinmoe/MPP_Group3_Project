@@ -9,48 +9,48 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-<br />
-	<h2 align="left">Fuel Logs</h2>
-	<br />
-	<a href="addFuelLog.html" class="btn btn-primary mb-2">Create</a>
+	<div class="container">
+		<h3 class="page-title">Fuel Logs</h3>
+		<a href="addFuelLog.html" class="btn btn-primary mb-2">Create</a>
 
-	<c:if test="${!empty fuelLogs}">
-		<table class="table table-bordered" id="fuelLogListTable">
-			<thead>
-				<tr>
-					<th>Date</th>
-					<th>Vehicle</th>
-					<th>Purchaser</th>
-					<th>Vendor</th>
-					<th>Liter</th>
-					<th>Liter Per Price</th>
-					<th>Total Price</th>
-					<th>Invoice Reference</th>
-					<th>Other Info</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${fuelLogs}" var="fuelLog">
+		<c:if test="${!empty fuelLogs}">
+			<table class="table table-hover" id="fuelLogListTable">
+				<thead>
 					<tr>
-						<td><c:out value="${fuelLog.date}" /></td>
-						<td><c:out value="${fuelLog.vehicleId}" /></td>
-						<td><c:out value="${fuelLog.purchaserId}" /></td>
-						<td><c:out value="${fuelLog.vendorId}" /></td> 
-						<td><c:out value="${fuelLog.liter}" /></td>
-						<td><c:out value="${fuelLog.pricePerLiter}" /></td>
-						<td><c:out value="${fuelLog.totalPrice}" /></td>
-						<td><c:out value="${fuelLog.invoiceReference}" /></td>
-						<td><c:out value="${fuelLog.otherInfo}" /></td>
-
-						<td align="center"><a
-							href="editFuelLog.html?id=${fuelLog.id}">Edit</a> | <a
-							href="deleteFuelLog.html?id=${fuelLog.id}">Delete</a></td>
+						<th>Date</th>
+						<th>Vehicle</th>
+						<th>Purchaser</th>
+						<th>Vendor</th>
+						<th>Liter</th>
+						<th>Liter Per Price</th>
+						<th>Total Price</th>
+						<th>Invoice Reference</th>
+						<th>Other Info</th>
+						<th></th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</c:if>
+				</thead>
+				<tbody>
+					<c:forEach items="${fuelLogs}" var="fuelLog">
+						<tr>
+							<td><c:out value="${fuelLog.date}" /></td>
+							<td><c:out value="${fuelLog.vehicleId}" /></td>
+							<td><c:out value="${fuelLog.purchaserId}" /></td>
+							<td><c:out value="${fuelLog.vendorId}" /></td>
+							<td><c:out value="${fuelLog.liter}" /></td>
+							<td><c:out value="${fuelLog.pricePerLiter}" /></td>
+							<td><c:out value="${fuelLog.totalPrice}" /></td>
+							<td><c:out value="${fuelLog.invoiceReference}" /></td>
+							<td><c:out value="${fuelLog.otherInfo}" /></td>
+
+							<td align="center"><a
+								href="editFuelLog.html?id=${fuelLog.id}">Edit</a> | <a
+								href="deleteFuelLog.html?id=${fuelLog.id}">Delete</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {

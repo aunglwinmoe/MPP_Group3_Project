@@ -14,6 +14,8 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,10 +36,11 @@ public class OdometerController {
 	@Autowired
 	private OdometerService odometerService;
 
-	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
-		CustomDateEditor editor = new CustomDateEditor(dateFormat, true);
-		binder.registerCustomEditor(Date.class, editor);
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(false);
+		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
 
 	@RequestMapping(value = "/saveOdometer", method = RequestMethod.POST)

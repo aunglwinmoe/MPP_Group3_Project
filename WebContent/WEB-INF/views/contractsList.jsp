@@ -9,49 +9,49 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<br />
-	<h2 align="left">Contracts</h2>
-	<br />
+	<div class="container">
+		<h3 class="page-title">Contracts</h3>
 
-	<a href="addContract.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addContract.html" class="btn btn-primary mb-2">Create</a>
 
-	<c:if test="${!empty contracts}">
-		<table class="table table-bordered" id="contractListTable">
-			<thead>
-				<tr>
-					<th>Contract Type</th>
-					<th>Odometer At Creation</th>
-					<th>Invoice Date</th>
-					<th>Contract Start Date</th>
-					<th>Contract Expiration Date</th>
-					<th>Contractor</th>
-					<th>Vendor</th>
-					<th>Rental Fees</th>
-					<th>Terms And Conditions</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${contracts}" var="contract">
+		<c:if test="${!empty contracts}">
+			<table class="table table-hover" id="contractListTable">
+				<thead>
 					<tr>
-						<td><c:out value="${contract.contractTypeId}" /></td>
-						<td><c:out value="${contract.odometerAtCreation}" /></td>
-						<td><c:out value="${contract.invoiceDate}" /></td>
-						<td><c:out value="${contract.contractStartDate}" /></td>
-						<td><c:out value="${contract.contractExpDate}" /></td>
-						<td><c:out value="${contract.contractorId}" /></td>
-						<td><c:out value="${contract.vendorId}" /></td>
-						<td><c:out value="${contract.rentalCost}" /></td>
-						<td><c:out value="${contract.termsAndConditions}" /></td>
-
-						<td align="center"><a
-							href="editContract.html?id=${contract.id}">Edit</a> | <a
-							href="deleteContract.html?id=${contract.id}">Delete</a></td>
+						<th>Contract Type</th>
+						<th>Odometer At Creation</th>
+						<th>Invoice Date</th>
+						<th>Contract Start Date</th>
+						<th>Contract Expiration Date</th>
+						<th>Contractor</th>
+						<th>Vendor</th>
+						<th>Rental Fees</th>
+						<th>Terms And Conditions</th>
+						<th></th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</c:if>
+				</thead>
+				<tbody>
+					<c:forEach items="${contracts}" var="contract">
+						<tr>
+							<td><c:out value="${contract.contractTypeId}" /></td>
+							<td><c:out value="${contract.odometerAtCreation}" /></td>
+							<td><c:out value="${contract.invoiceDate}" /></td>
+							<td><c:out value="${contract.contractStartDate}" /></td>
+							<td><c:out value="${contract.contractExpDate}" /></td>
+							<td><c:out value="${contract.contractorId}" /></td>
+							<td><c:out value="${contract.vendorId}" /></td>
+							<td><c:out value="${contract.rentalCost}" /></td>
+							<td><c:out value="${contract.termsAndConditions}" /></td>
+
+							<td align="center"><a
+								href="editContract.html?id=${contract.id}">Edit</a> | <a
+								href="deleteContract.html?id=${contract.id}">Delete</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+	</div>
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
