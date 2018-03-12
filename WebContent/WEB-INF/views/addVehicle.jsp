@@ -10,17 +10,13 @@
 <title></title>
 </head>
 <body>
-	<h2>Add Vehicle Data</h2>
+<br />
+	<h2>Vehicle</h2>
 	<form:form method="POST" action="/group3/saveVehicle.html"
 		class="col-sm-4">
-		<div class="form-group row">
-			<form:label path="id" class="col-sm-5 col-form-label">Vehicle ID:</form:label>
-			<div class="col-sm-7">
-				<form:input path="id" value="${vehicle.id}" readonly="true"
-					class="form-control" />
-			</div>
-		</div>
 
+		<br />
+		<form:hidden path="id" />
 
 		<div class="form-group row">
 			<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>

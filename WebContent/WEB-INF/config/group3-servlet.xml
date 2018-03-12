@@ -44,6 +44,9 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 				<value>edu.mum.group3.model.User</value>
 				<value>edu.mum.group3.model.ServiceLog</value>
 				<value>edu.mum.group3.model.Vehicle</value>
+				<value>edu.mum.group3.model.Contract</value>
+				<value>edu.mum.group3.model.Odometer</value>
+				<value>edu.mum.group3.model.FuelLog</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

@@ -9,7 +9,9 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
+	<br />
 	<h2 align="left">Vehicles</h2>
+	<br />
 	<a href="addVehicle.html" class="btn btn-primary mb-2">Create</a>
 
 	<c:if test="${!empty vehicles}">

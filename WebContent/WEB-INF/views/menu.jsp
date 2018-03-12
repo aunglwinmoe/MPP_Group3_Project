@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vehicle Management System</title>
 <link rel="stylesheet" type="text/css" href="css/design.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap/css/bootstrap.min.css">
 <script type="text/JavaScript" src="css/design.js"></script>
 
 <script type="text/javascript"
@@ -28,8 +29,9 @@
 				Vehicles <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="vehicles.html">Vehicles</a> <a href="odometers.html">Vehicles Odometer</a> <a
-					href="#">Vehicle Costs</a> <a href="#">Vehicle Contracts</a>
+				<a href="vehicles.html">Vehicles</a> <a href="odometers.html">Vehicles
+					Odometer</a> <a href="#">Vehicle Costs</a> <a href="contracts.html">Vehicle
+					Contracts</a>
 			</div>
 		</div>
 
@@ -38,8 +40,8 @@
 				Logs <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="#">Vehicle Fuel Logs</a> <a href="#">Vehicles Services
-					Logs</a>
+				<a href="fuelLogs.html">Vehicle Fuel Logs</a> <a href="#">Vehicles
+					Services Logs</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -56,8 +58,9 @@
 				Configuration <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="models.html">Vehicle Model</a> <a href="makes.html">Vehicle Brand/Make</a> <a
-					href="serviceTypes.html">Service Types</a><a href="contractTypes.html">Contract Type</a>
+				<a href="models.html">Vehicle Model</a> <a href="makes.html">Vehicle
+					Brand/Make</a> <a href="serviceTypes.html">Service Types</a><a
+					href="contractTypes.html">Contract Type</a>
 			</div>
 		</div>
 
