@@ -17,8 +17,6 @@
 			<div class="row">
 				<form:hidden path="id" />
 				<div class="col-sm">
-
-
 					<div class="form-group row">
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
@@ -45,7 +43,6 @@
 						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-								class="form-control" required="true" />
 								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}" placeholder="e.g ABC123"/>
 								<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
@@ -90,8 +87,6 @@
 								class="form-control" />
 						</div>
 					</div>
-				</div>
-				<div class="col-sm">
 					<div class="form-group row">
 						<form:label path="residualVal" class="col-sm-5 col-form-label">Residual Value:</form:label>
 						<div class="col-sm-7">
@@ -99,8 +94,8 @@
 								class="form-control" />
 						</div>
 					</div>
-<<<<<<< HEAD
-
+				</div>
+				<div class="col-sm">
 					<div class="form-group row">
 						<form:label path="limitedOdometer" class="col-sm-5 col-form-label">Odometer Limit:</form:label>
 						<div class="col-sm-7">
@@ -109,10 +104,6 @@
 								required="true" />
 						</div>
 					</div>
-				</div>
-				<div class="col-sm">
-=======
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 					<div class="form-group row">
 						<form:label path="seatsNum" class="col-sm-5 col-form-label">Seats Number:</form:label>
 						<div class="col-sm-7">

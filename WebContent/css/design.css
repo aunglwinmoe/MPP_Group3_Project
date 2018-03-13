@@ -147,14 +147,12 @@ a:hover {
 
 .page-title {
 	margin: 20px 0;
+	float: left;
 }
 
 .icon {
 	padding: 0 5px;
 }
-
-<<<<<<< HEAD
-=======
 .table {
 	font-size: 13px !Important;
 	margin-top: 20px !Important;
@@ -164,7 +162,21 @@ a:hover {
 	background: #875A7B !Important;
 	border-color: #875A7B !Important;
 }
->>>>>>> 82ffdaeefe6a914220d9ee7548a44a8e9103680d
+.logout {
+	color: #875A7B; 
+	border: 1px solid #875A7B;
+	border-radius: 5px;
+	padding: 5px 15px;
+}
+.logout:hover{
+	color: #FFF;
+	background: #875A7B;
+}
+.title {
+	text-align: center;
+	margin: 0 auto 35px;
+	text-transform: uppercase;
+}
 .login_logo {
 	background-image: url(../css/Vehicle_System_Logo.png);
 	height: 300px;
