@@ -52,9 +52,11 @@
 </script>
 </head>
 <body>
-<h1 align="center" class="page-title">Vehicle Management System</h1>
-
-<h5 align="right"> Welcome <%=session.getAttribute("userName")%> <a href='logout.html'> Log out</a> </h5>
+<div style="text-align: right; padding: 15px 10px"> 
+	<span style="color: #888; padding-right: 20px">Welcome <%=session.getAttribute("userName")%>!</span> 
+	<a href='logout.html' class="logout"> Log out</a>
+</div>
+<h1 class="title">Vehicle Management System</h1>
 	<div class="topnav" id="myTopnav">
 
 		<div class="dropdown">

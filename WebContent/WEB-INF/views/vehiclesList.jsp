@@ -11,12 +11,11 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Vehicles</h3>
-		<a href="addVehicle.html" class="btn btn-primary mb-2">Create</a>
-
+		<a href="addVehicle.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		<c:if test="${!empty vehicles}">
 			<table class="table table-hover" id="vehicleListTable">
 				<thead>
-					<tr>
+					<tr>	
 						<!-- <th>Vehicle ID</th>
 				<th>Catalog Value</th>
 				<th>Residual Value</th>
@@ -62,10 +61,7 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
-							<td><c:out value="${vehicle.status}" /></td>
-							<td align="center"><a
-								href="editVehicle.html?id=${vehicle.id}">Edit</a> | <a
-								href="deleteVehicle.html?id=${vehicle.id}">Delete</a></td>
+							<td><c:out value="${vehicle.status}" /></td>							 
 							<td align="center">
 								<a href="editVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
 								<a href="deleteVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-trash-alt"></i></a>

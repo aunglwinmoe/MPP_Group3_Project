@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -13,21 +14,17 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Vehicle</h3>
-		<form:form method="POST" action="/group3/saveVehicle.html"
-			class=" needs-validation" novalidate="true">
+		<form:form method="POST" action="/group3/saveVehicle.html" class=" needs-validation" novalidate="true">
 			<div class="row">
 				<form:hidden path="id" />
 				<div class="col-sm">
-
-
 					<div class="form-group row">
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
 							<form:input path="vehicleName" value="${vehicle.vehicleName}"
 								class="form-control" readonly="true" />
 							<div class="valid-feedback">Looks good!</div>
-							<div class="invalid-feedback">Please enter a valid Vehicle
-								name.</div>
+				    		<div class="invalid-feedback">Please enter a valid Vehicle name.</div>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -35,14 +32,11 @@
 						<div class="col-sm-7">
 							<form:select path="modelId" class="form-control" required="true">
 								<c:forEach items="${models}" var="model">
-									<option
-										<c:if test="${model.id eq vehicle.modelId}">selected</c:if>
-										value="${model.id}">${model.modelName}</option>
+									<option <c:if test="${model.id eq vehicle.modelId}">selected</c:if> value="${model.id}">${model.modelName}</option>
 								</c:forEach>
 							</form:select>
 							<div class="valid-feedback">Looks good!</div>
-							<div class="invalid-feedback">Please choose a Vehicle
-								Model.</div>
+				    		<div class="invalid-feedback">Please choose a Vehicle Model.</div>
 						</div>
 					</div>
 
@@ -50,11 +44,9 @@
 						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}"
-								placeholder="e.g ABC123" />
-							<div class="valid-feedback">Looks good!</div>
-							<div class="invalid-feedback">Please enter a valid License
-								Plate.</div>
+								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}" placeholder="e.g ABC123"/>
+								<div class="valid-feedback">Looks good!</div>
+				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -166,7 +158,8 @@
 					<div class="form-group row">
 						<form:label path="status" class="col-sm-5 col-form-label">Status:</form:label>
 						<div class="col-sm-7">
-							<form:select path="status" class="form-control" required="true">
+							<form:select path="status" class="form-control" required="true"
+								multiple="false">
 								<option <c:if test="${vehicle.status == 'Sold'}">selected</c:if>
 									value="Sold">Sold</option>
 								<option <c:if test="${vehicle.status== 'Rent'}">selected</c:if>
@@ -176,10 +169,7 @@
 					</div>
 				</div>
 			</div>
-
-			<center>
-				<input type="submit" value="Save" class="btn btn-primary mb-2" />
-			</center>
+			<input type="submit" value="Save" class="btn btn-primary mb-2" />
 
 		</form:form>
 	</div>
