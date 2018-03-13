@@ -22,7 +22,7 @@
 				    <div class="invalid-feedback">Please enter a valid Service Type.</div>
 				</div>
 			</div>
-			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
+			<input type="submit" value="Save" class="btn btn-primary mb-2"/>
 		</form:form>
 	</div>
 </body>

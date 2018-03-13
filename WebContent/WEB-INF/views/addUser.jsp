@@ -65,7 +65,7 @@
 				    <div class="invalid-feedback">Please retype your password.</div>
 				</div>
 			</div>
-			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
+			<input type="submit" value="Save" class="btn btn-primary mb-2"/>
 		</form:form>
 	</div>
 	<script>
