@@ -19,32 +19,34 @@
 				<form:hidden path="id" />
 				<div class="col-sm">
 
+
 					<div class="form-group row">
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
 							<form:input path="vehicleName" value="${vehicle.vehicleName}"
-								class="form-control" />
+								class="form-control" readonly="true" />
 						</div>
 					</div>
+
 					<div class="form-group row">
-						<form:label path="licensePlate" class="col-sm-5 col-form-label">licensePlate:</form:label>
+						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-								class="form-control" />
+								class="form-control" required="true" />
 						</div>
 					</div>
 					<div class="form-group row">
 						<form:label path="chassisNumber" class="col-sm-5 col-form-label">Chassis Number:</form:label>
 						<div class="col-sm-7">
 							<form:input path="chassisNumber" value="${vehicle.chassisNumber}"
-								class="form-control" />
+								class="form-control" required="true" />
 						</div>
 					</div>
 					<div class="form-group row">
 						<form:label path="modelYear" class="col-sm-5 col-form-label">Model Year:</form:label>
 						<div class="col-sm-7">
 							<form:input path="modelYear" value="${vehicle.modelYear}"
-								class="form-control" />
+								class="form-control" required="true" />
 						</div>
 					</div>
 					<div class="form-group row">
@@ -77,6 +79,15 @@
 						<div class="col-sm-7">
 							<form:input path="residualVal" value="${vehicle.residualVal}"
 								class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<form:label path="limitedOdometer" class="col-sm-5 col-form-label">Odometer Limit:</form:label>
+						<div class="col-sm-7">
+							<form:input path="limitedOdometer"
+								value="${vehicle.limitedOdometer}" class="form-control"
+								required="true" />
 						</div>
 					</div>
 				</div>
@@ -129,6 +140,18 @@
 						<div class="col-sm-7">
 							<form:input path="power" value="${vehicle.power}"
 								class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<form:label path="status" class="col-sm-5 col-form-label">Status:</form:label>
+						<div class="col-sm-7">
+							<form:select path="status" class="form-control" required="true"
+								multiple="false">
+								<option <c:if test="${status}=='On Sold'">selected</c:if>
+									value="On Sold">On Sold</option>
+								<option <c:if test="${status}=='On Rent'">selected</c:if>
+									value="On Rent">On Rent</option>
+							</form:select>
 						</div>
 					</div>
 				</div>

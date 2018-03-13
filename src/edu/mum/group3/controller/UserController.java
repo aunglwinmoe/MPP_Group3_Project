@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mum.group3.bean.UserBean;
@@ -27,7 +28,7 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -73,6 +74,26 @@ public class UserController {
 		return new ModelAndView("addUser", model);
 	}
 
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public ModelAndView welcome() {
+		return new ModelAndView("index");
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST	)
+	public ModelAndView login() {
+		return new ModelAndView("login");
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET	)
+	public ModelAndView logout() {
+		return new ModelAndView("logout");
+	}
+	
+	@RequestMapping(value = "/menu", method = RequestMethod.GET)
+	public ModelAndView menu() {
+		return new ModelAndView("menu");		
+	}
+
 	private User prepareModel(UserBean userBean) {
 		User user = new User();
 		user.setUserId(userBean.getId());
@@ -97,7 +118,7 @@ public class UserController {
 				bean.setLastName(user.getLastName());
 				bean.setFirstName(user.getFirstName());
 				bean.setId(user.getUserId());
-				
+
 				beans.add(bean);
 			}
 		}

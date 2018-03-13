@@ -36,6 +36,7 @@
 						<th>Fuel Type</th>
 						<th>Horse Power</th>
 						<th>Power</th>
+						<th>Status</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -59,6 +60,7 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
+							<td><c:out value="${vehicle.status}" /></td>
 							<td align="center"><a
 								href="editVehicle.html?id=${vehicle.id}">Edit</a> | <a
 								href="deleteVehicle.html?id=${vehicle.id}">Delete</a></td>

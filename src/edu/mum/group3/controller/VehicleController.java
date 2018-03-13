@@ -81,9 +81,10 @@ public class VehicleController {
 	}
 
 	private Vehicle prepareModel(VehicleBean vehicleBean) {
-		Vehicle vehicle = new Vehicle();
+		Vehicle vehicle = new Vehicle();		
 		
-		vehicle.setVehicleName(vehicleBean.getVehicleName());
+		String vehicleName = vehicleBean.getLicensePlate() +"/ " + vehicleBean.getChassisNumber();
+		vehicle.setVehicleName(vehicleName);
 		vehicle.setLicensePlate(vehicleBean.getLicensePlate());
 		vehicle.setChassisNumber(vehicleBean.getChassisNumber());
 		vehicle.setModelYear(vehicleBean.getModelYear());
@@ -98,6 +99,8 @@ public class VehicleController {
 		vehicle.setFuelType(vehicleBean.getFuelType());
 		vehicle.setHorsePower(vehicleBean.getHorsePower());
 		vehicle.setPower(vehicleBean.getPower());
+		vehicle.setLimitedOdometer(vehicleBean.getLimitedOdometer());
+		vehicle.setStatus(vehicleBean.getStatus());
 		vehicle.setVehicleId(vehicleBean.getId());
 		vehicleBean.setId(null);
 		return vehicle;
@@ -126,6 +129,8 @@ public class VehicleController {
 				bean.setFuelType(vehicle.getFuelType());
 				bean.setHorsePower(vehicle.getHorsePower());
 				bean.setPower(vehicle.getPower());
+				bean.setLimitedOdometer(vehicle.getLimitedOdometer());
+				bean.setStatus(vehicle.getStatus());
 				beans.add(bean);
 			}
 		}
@@ -150,6 +155,8 @@ public class VehicleController {
 		bean.setFuelType(vehicle.getFuelType());
 		bean.setHorsePower(vehicle.getHorsePower());
 		bean.setPower(vehicle.getPower());
+		bean.setLimitedOdometer(vehicle.getLimitedOdometer());
+		bean.setStatus(vehicle.getStatus());
 		bean.setId(vehicle.getVehicleId());
 		return bean;
 	}

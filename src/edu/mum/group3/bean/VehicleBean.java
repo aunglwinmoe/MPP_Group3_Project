@@ -24,6 +24,8 @@ public class VehicleBean {
 	private String fuelType;
 	private int horsePower;
 	private String power;
+	private String status;
+	private double limitedOdometer;
 
 	public Integer getId() {
 		return id;
@@ -151,6 +153,22 @@ public class VehicleBean {
 
 	public void setPower(String power) {
 		this.power = power;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public double getLimitedOdometer() {
+		return limitedOdometer;
+	}
+
+	public void setLimitedOdometer(double limitedOdometer) {
+		this.limitedOdometer = limitedOdometer;
 	}
 
 }
