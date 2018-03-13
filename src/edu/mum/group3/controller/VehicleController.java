@@ -87,14 +87,10 @@ public class VehicleController {
 
 	private Vehicle prepareModel(VehicleBean vehicleBean) {
 		Vehicle vehicle = new Vehicle();		
-		
-<<<<<<< HEAD
+
 		String vehicleName = vehicleBean.getLicensePlate() +"/ " + vehicleBean.getChassisNumber();
 		vehicle.setVehicleName(vehicleName);
-=======
-		vehicle.setVehicleName(vehicleBean.getVehicleName());
 		vehicle.setModelId(vehicleBean.getModelId());
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 		vehicle.setLicensePlate(vehicleBean.getLicensePlate());
 		vehicle.setChassisNumber(vehicleBean.getChassisNumber());
 		vehicle.setModelYear(vehicleBean.getModelYear());
