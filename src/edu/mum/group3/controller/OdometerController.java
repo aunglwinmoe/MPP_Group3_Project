@@ -94,42 +94,52 @@ public class OdometerController {
 	private Odometer prepareModel(OdometerBean odometerBean) {
 		Odometer odometer = new Odometer();
 
-		double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
-		double previousOdometer = odometerService.getOdometer(odometerBean.getId()).getOdometerVal();
 		double odo = odometerBean.getOdometerVal();
-		String previousStatus = odometerService.getOdometer(odometerBean.getId()).getStatus();
 
-		if (previousOdometer != 0 && !odometerBean.getChkService()) {
+		odometer.setVehicleId(odometerBean.getVehicleId());
+		odometer.setOdometerId(odometerBean.getId());
 
-			Double previous = (previousOdometer / limit);
-			Double current = (odo / limit);
-			if (current.intValue() > previous.intValue()) {
-				odometer.setStatus("Service is Needed");
-				odometer.setChkService(false);
-				odometerBean.setChkService(false);
-			} else {
-				if (previousStatus.equals("Service is Needed")) {
-					odometer.setStatus(previousStatus);
+		if (odometerBean.getId() != null) {
+			double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
+			String previousStatus = odometerService.getOdometer(odometerBean.getId()).getStatus();
+			double previousOdometer = odometerService.getOdometer(odometerBean.getId()).getOdometerVal();
+			if (previousOdometer != 0 && !odometerBean.getChkService()) {
+
+				Double previous = (previousOdometer / limit);
+				Double current = (odo / limit);
+				if (current.intValue() > previous.intValue()) {
+					odometer.setStatus("Service is Needed");
 					odometer.setChkService(false);
 					odometerBean.setChkService(false);
 				} else {
-					odometer.setStatus("Normal");
+					
+					if (previousStatus.equals("Service is Needed")) {
+						odometer.setStatus("Service is Needed");
+						odometer.setChkService(false);
+						odometerBean.setChkService(false);
+					} else {
+						odometer.setStatus("Normal");
+						odometer.setChkService(false);
+						odometerBean.setChkService(false);
+					}
 				}
 			}
 		} else {
 			odometer.setStatus("Normal");
+			odometer.setChkService(false);
 			odometerBean.setChkService(false);
 		}
+
 		if (odometerBean.getChkService()) {
 			odometer.setStatus("Normal");
+			odometer.setChkService(false);
+			odometerBean.setChkService(false);
 		}
+
 		odometer.setOdometerVal(odometerBean.getOdometerVal());
 		odometer.setChkService(odometerBean.getChkService());
 		odometer.setDate(odometerBean.getDate());
-
-		odometer.setVehicleId(odometerBean.getVehicleId());
 		odometer.setServiceDate(odometerBean.getServiceDate());
-		odometer.setOdometerId(odometerBean.getId());
 		odometerBean.setId(null);
 		return odometer;
 	}
