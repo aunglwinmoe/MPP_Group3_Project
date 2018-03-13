@@ -9,7 +9,7 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<div class="container" style="width: 100%; max-width: inherit">
+	<div class="container">
 		<h3 class="page-title">Vehicles</h3>
 		<a href="addVehicle.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		<c:if test="${!empty vehicles}">
@@ -61,7 +61,7 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
-							<td><c:out value="${vehicle.status}" /></td>
+							<td><c:out value="${vehicle.status}" /></td>							 
 							<td align="center">
 								<a href="editVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
 								<a href="deleteVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-trash-alt"></i></a>

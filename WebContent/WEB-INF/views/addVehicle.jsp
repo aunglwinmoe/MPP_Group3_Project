@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -159,10 +160,10 @@
 						<div class="col-sm-7">
 							<form:select path="status" class="form-control" required="true"
 								multiple="false">
-								<option <c:if test="${status}=='On Sold'">selected</c:if>
-									value="On Sold">On Sold</option>
-								<option <c:if test="${status}=='On Rent'">selected</c:if>
-									value="On Rent">On Rent</option>
+								<option <c:if test="${vehicle.status == 'Sold'}">selected</c:if>
+									value="Sold">Sold</option>
+								<option <c:if test="${vehicle.status== 'Rent'}">selected</c:if>
+									value="Rent">Rent</option>
 							</form:select>
 						</div>
 					</div>
