@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Vendors</h3>
-		<a href="addVendor.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addVendor.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 	
 		<c:if test="${!empty vendors}">
 			<table class="table table-hover" id="vendorListTable">

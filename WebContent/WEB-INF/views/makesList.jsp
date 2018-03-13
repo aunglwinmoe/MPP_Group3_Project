@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Model make of Vehicle</h3>
-		<a href="addMake.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addMake.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		
 		<c:if test="${!empty makes}">
 			<table class="table table-hover" id="makeListTable">

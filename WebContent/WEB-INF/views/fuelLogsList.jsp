@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Fuel Logs</h3>
-		<a href="addFuelLog.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addFuelLog.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 
 		<c:if test="${!empty fuelLogs}">
 			<table class="table table-hover" id="fuelLogListTable">

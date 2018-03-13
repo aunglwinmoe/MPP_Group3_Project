@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Vehicle Model</h3>
-		<a href="addModel.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addModel.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		
 		<c:if test="${!empty models}">
 			<table class="table table-hover">
