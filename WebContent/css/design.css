@@ -2,6 +2,10 @@ h1, h3 {
 	color: #875A7B !important;
 }
 
+a:hover {
+	text-decoration: none !Important;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
 	background-color: #875A7B;
@@ -16,7 +20,7 @@ h1, h3 {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 17px;
+	font-size: 15px;
 }
 
 /* Add an active class to highlight the current page */
@@ -39,7 +43,6 @@ h1, h3 {
 
 /* Style the dropdown button to fit inside the topnav */
 .dropdown .dropbtn {
-	font-size: 17px;
 	border: none;
 	outline: none;
 	color: white;
@@ -150,6 +153,18 @@ h1, h3 {
 	padding: 0 5px;
 }
 
+<<<<<<< HEAD
+=======
+.table {
+	font-size: 13px !Important;
+	margin-top: 20px !Important;
+}
+
+.btn-primary {
+	background: #875A7B !Important;
+	border-color: #875A7B !Important;
+}
+>>>>>>> 82ffdaeefe6a914220d9ee7548a44a8e9103680d
 .login_logo {
 	background-image: url(../css/Vehicle_System_Logo.png);
 	height: 300px;
