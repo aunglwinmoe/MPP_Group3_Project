@@ -20,7 +20,6 @@
 </head>
 <body>
 	<div class="container">
-<<<<<<< HEAD
 	
 		<form:form method="POST" action="/group3/login.html" class="col-sm-4"> 
 			<div class="login_logo"></div>
@@ -41,7 +40,6 @@
 			 
 
 		</form:form>
-=======
 		<div class="row justify-content-md-center" style="margin-top:200px">
 			<div class="login_logo"></div>
 			<form:form method="POST" action="/group3/menu.html" class="col-sm-4">
@@ -60,7 +58,6 @@
 				<input type="submit" value="Login" class="btn btn-primary mb-2" onClick="document.location.href='index.html'" />
 			</form:form>
 		</div>
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 	</div>
 </body>
 </html>
