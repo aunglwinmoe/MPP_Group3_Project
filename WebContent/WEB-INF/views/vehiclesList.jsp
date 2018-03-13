@@ -9,7 +9,7 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<div class="container" style="width: 100%; max-width: inherit">
+	<div class="container">
 		<h3 class="page-title">Vehicles</h3>
 		<a href="addVehicle.html" class="btn btn-primary mb-2">Create</a>
 
@@ -62,17 +62,14 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
-<<<<<<< HEAD
 							<td><c:out value="${vehicle.status}" /></td>
 							<td align="center"><a
 								href="editVehicle.html?id=${vehicle.id}">Edit</a> | <a
 								href="deleteVehicle.html?id=${vehicle.id}">Delete</a></td>
-=======
 							<td align="center">
 								<a href="editVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
 								<a href="deleteVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
 							</td>
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 						</tr>
 					</c:forEach>
 				</tbody>
