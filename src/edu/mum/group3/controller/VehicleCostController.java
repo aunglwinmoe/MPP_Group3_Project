@@ -1,7 +1,6 @@
 package edu.mum.group3.controller;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -23,10 +22,12 @@ import edu.mum.group3.bean.ModelBean;
 import edu.mum.group3.bean.ServiceTypeBean;
 import edu.mum.group3.bean.VehicleBean;
 import edu.mum.group3.bean.VehicleCostBean;
+import edu.mum.group3.bean.VendorBean;
 import edu.mum.group3.model.Model;
 import edu.mum.group3.model.ServiceType;
 import edu.mum.group3.model.Vehicle;
 import edu.mum.group3.model.VehicleCost;
+import edu.mum.group3.model.Vendor;
 import edu.mum.group3.service.ServiceTypeService;
 import edu.mum.group3.service.VehicleCostService;
 import edu.mum.group3.service.VehicleService;
@@ -76,6 +77,7 @@ public class VehicleCostController {
 		model.put("vehiclecosts", prepareListofBean(vehicleCostService.listVehicleCosts()));
 		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
 		model.put("servicetypes", prepareServiceTypeListofBean(serviceTypeService.listServiceTypes()));
+		model.put("vehiclecosts", prepareListofBean(vehicleCostService.listVehicleCosts()));
 		return new ModelAndView("addVehicleCost", model);
 	}
 
@@ -95,6 +97,8 @@ public class VehicleCostController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vehiclecost", prepareModelBean(vehicleCostService.getVehicleCost(vehicleCostBean.getId())));
 		model.put("vehiclecosts", prepareListofBean(vehicleCostService.listVehicleCosts()));
+		model.put("servicetypes", prepareServiceTypeListofBean(serviceTypeService.listServiceTypes()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
 		return new ModelAndView("addVehicleCost", model);
 	}
 
@@ -106,7 +110,6 @@ public class VehicleCostController {
 		vehicleCost.setTotalPrice(vehicleCostBean.getTotalPrice());
 		vehicleCost.setVehicleId(vehicleCostBean.getVehicleId());
 		vehicleCost.setServiceTypeId(vehicleCostBean.getServiceTypeId());
-
 		vehicleCost.setVehicleCostId(vehicleCostBean.getId());
 		vehicleCostBean.setId(null);
 		return vehicleCost;
@@ -119,7 +122,7 @@ public class VehicleCostController {
 			VehicleCostBean bean = null;
 			for (VehicleCost vehicleCost : vehiclecosts) {
 				bean = new VehicleCostBean();
-				bean.setId(vehicleCost.getVehicleId());
+				bean.setId(vehicleCost.getVehicleCostId());
 				bean.setCostDesc(vehicleCost.getCostDesc());
 				bean.setDate(vehicleCost.getDate());
 				bean.setTotalPrice(vehicleCost.getTotalPrice());
@@ -166,12 +169,12 @@ public class VehicleCostController {
 	private VehicleCostBean prepareModelBean(VehicleCost vehicleCost) {
 		VehicleCostBean bean = new VehicleCostBean();
 
-		bean.setCostDesc(vehicleCost.getCostDesc());
 		bean.setDate(vehicleCost.getDate());
 		bean.setTotalPrice(vehicleCost.getTotalPrice());
 		bean.setVehicleId(vehicleCost.getVehicleId());
 		bean.setServiceTypeId(vehicleCost.getServiceTypeId());
-		bean.setId(vehicleCost.getVehicleId());
+		bean.setId(vehicleCost.getVehicleCostId());
+		bean.setCostDesc(vehicleCost.getCostDesc());
 		return bean;
 	}
 }

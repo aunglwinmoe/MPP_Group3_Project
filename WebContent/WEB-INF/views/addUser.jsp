@@ -40,16 +40,6 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<form:label path="dateOfBirth" class="col-sm-5 col-form-label">Date of Birth:</form:label>
-				<div class="col-sm-7">
-					<fmt:formatDate pattern="yyyy-MM-dd" value="${user.dateOfBirth}" var="date" />
-					<form:input id="dateOfBirth" type="date" path="dateOfBirth"
-						value="${date}" class="form-control" required="true"/>
-						<div class="valid-feedback">Looks good!</div>
-				    <div class="invalid-feedback">Please enter a valid date.</div>
-				</div>
-			</div>
-			<div class="form-group row">
 				<form:label path="password" class="col-sm-5 col-form-label">Password:</form:label>
 				<div class="col-sm-7">
 					<form:input path="password" id="inputPassword" type="password" value="${user.password}"  class="form-control" required="true"/>

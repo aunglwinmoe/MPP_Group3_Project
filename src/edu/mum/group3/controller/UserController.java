@@ -76,7 +76,6 @@ public class UserController {
 	private User prepareModel(UserBean userBean) {
 		User user = new User();
 		user.setUserId(userBean.getId());
-		user.setDateOfBirth(userBean.getDateOfBirth());
 		user.setPassword(userBean.getPassword());
 		user.setUserName(userBean.getUserName());
 		user.setLastName(userBean.getLastName());
@@ -92,7 +91,6 @@ public class UserController {
 			UserBean bean = null;
 			for (User user : users) {
 				bean = new UserBean();
-				bean.setDateOfBirth(user.getDateOfBirth());
 				bean.setUserName(user.getUserName());
 				bean.setLastName(user.getLastName());
 				bean.setFirstName(user.getFirstName());
@@ -106,7 +104,6 @@ public class UserController {
 
 	private UserBean prepareUserBean(User user) {
 		UserBean bean = new UserBean();
-		bean.setDateOfBirth(user.getDateOfBirth());
 		bean.setPassword(user.getPassword());
 		bean.setUserName(user.getUserName());
 		bean.setLastName(user.getLastName());

@@ -14,28 +14,31 @@
 	<div class="container">
 		<h3 class="page-title">Vehicle Cost</h3>
 		<form:form method="POST" action="/group3/saveVehicleCost.html"
-			class="col-sm-4">
+			class="col-sm-4 needs-validation" novalidate="true">
 
-			<br />
 			<form:hidden path="id" />
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:select path="vehicleId" class="form-control">
+					<form:select path="vehicleId" class="form-control" required="true">
 						<c:forEach items="${vehicles}" var="vehicle">
-							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+							<option <c:if test="${vehicle.id eq vehiclecost.vehicleId}">selected</c:if> value="${vehicle.id}">${vehicle.vehicleName}</option>
 						</c:forEach>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a Vehicle.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Service Type:</form:label>
 				<div class="col-sm-7">
-					<form:select path="serviceTypeId" class="form-control">
+					<form:select path="serviceTypeId" class="form-control" required="true">
 						<c:forEach items="${servicetypes}" var="servicetype">
-							<form:option value="${servicetype.id}">${servicetype.serviceTypeName}</form:option>
+							<option <c:if test="${servicetype.id eq vehiclecost.serviceTypeId}">selected</c:if> value="${servicetype.id}">${servicetype.serviceTypeName}</option>
 						</c:forEach>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a Service Type.</div>
 				</div>
 			</div>
 
@@ -45,7 +48,9 @@
 					<fmt:formatDate pattern="yyyy-MM-dd" value="${vehiclecost.date}"
 						var="vehiclecostDate" />
 					<form:input id="date" type="date" path="date"
-						value="${vehiclecostDate}" class="form-control" />
+						value="${vehiclecostDate}" class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Date.</div>
 				</div>
 			</div>
 
@@ -61,14 +66,12 @@
 			<div class="form-group row">
 				<form:label path="costDesc" class="col-sm-5 col-form-label">Cost Description:</form:label>
 				<div class="col-sm-7">
-					<form:textarea path="costDesc" value="${vehiclecost.costDesc}"
+					<form:input path="costDesc" value="${vehiclecost.costDesc}"
 						class="form-control" />
 				</div>
 			</div>
 
-			<center>
-				<input type="submit" value="Save" class="btn btn-primary mb-2" />
-			</center>
+			<input type="submit" value="Save" class="btn btn-primary mb-2" />
 		</form:form>
 	</div>
 </body>

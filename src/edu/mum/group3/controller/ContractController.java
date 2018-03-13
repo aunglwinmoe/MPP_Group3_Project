@@ -21,12 +21,15 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.mum.group3.bean.ContractBean;
 import edu.mum.group3.bean.ContractTypeBean;
 import edu.mum.group3.bean.VehicleBean;
+import edu.mum.group3.bean.VendorBean;
 import edu.mum.group3.model.Contract;
 import edu.mum.group3.model.ContractType;
 import edu.mum.group3.model.Vehicle;
+import edu.mum.group3.model.Vendor;
 import edu.mum.group3.service.ContractService;
 import edu.mum.group3.service.ContractTypeService;
 import edu.mum.group3.service.VehicleService;
+import edu.mum.group3.service.VendorService;
 
 /**
  * @author Lwin Moe Aung
@@ -43,6 +46,9 @@ public class ContractController {
 
 	@Autowired
 	private VehicleService vehicleService;
+	
+	@Autowired
+	private VendorService vendorService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
@@ -71,6 +77,7 @@ public class ContractController {
 		model.put("contracts", prepareListofBean(contractService.listContracts()));
 		model.put("contracttypes", prepareContractTypeListofBean(contractTypeService.listContractTypes()));
 		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("vendors", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addContract", model);
 	}
 
@@ -88,6 +95,9 @@ public class ContractController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("contract", prepareModelBean(contractService.getContract(contractBean.getId())));
 		model.put("contracts", prepareListofBean(contractService.listContracts()));
+		model.put("contracttypes", prepareContractTypeListofBean(contractTypeService.listContractTypes()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("vendor", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addContract", model);
 	}
 
@@ -119,7 +129,7 @@ public class ContractController {
 				bean.setContractExpDate(contract.getContractExpDate());
 				bean.setContractorId(contract.getContractorId());
 				bean.setVendorId(contract.getVendorId());
-
+				bean.setVendorName(vendorService.getVendor(contract.getVendorId()).getVendorName());
 				bean.setVehicleName(vehicleService.getVehicle(contract.getVehicleId()).getVehicleName());
 				bean.setContractStartDate(contract.getContractStartDate());
 				bean.setInvoiceDate(contract.getInvoiceDate());
@@ -162,6 +172,21 @@ public class ContractController {
 				bean = new ContractTypeBean();
 				bean.setId(contractType.getContractTypeId());
 				bean.setContractTypeName(contractType.getContractTypeName());
+				beans.add(bean);
+			}
+		}
+		return beans;
+	}
+	
+	private List<VendorBean> prepareVendorListofBean(List<Vendor> vendors) {
+		List<VendorBean> beans = null;
+		if (vendors != null && !vendors.isEmpty()) {
+			beans = new ArrayList<VendorBean>();
+			VendorBean bean = null;
+			for (Vendor vendor : vendors) {
+				bean = new VendorBean();
+				bean.setId(vendor.getVendorId());
+				bean.setVendorName(vendor.getVendorName());
 				beans.add(bean);
 			}
 		}
