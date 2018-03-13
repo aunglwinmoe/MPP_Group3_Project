@@ -95,14 +95,32 @@ public class OdometerController {
 		Odometer odometer = new Odometer();
 
 		double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
-		if (odometerBean.getOdometerVal() >= limit) {
-			odometer.setStatus("Service is Needed");
-		}
-		else {
+		double previousOdometer = odometerService.getOdometer(odometerBean.getId()).getOdometerVal();
+		double odo = odometerBean.getOdometerVal();
+		String previousStatus = odometerService.getOdometer(odometerBean.getId()).getStatus();
+
+		if (previousOdometer != 0 && !odometerBean.getChkService()) {
+
+			Double previous = (previousOdometer / limit);
+			Double current = (odo / limit);
+			if (current.intValue() > previous.intValue()) {
+				odometer.setStatus("Service is Needed");
+				odometer.setChkService(false);
+				odometerBean.setChkService(false);
+			} else {
+				if (previousStatus.equals("Service is Needed")) {
+					odometer.setStatus(previousStatus);
+					odometer.setChkService(false);
+					odometerBean.setChkService(false);
+				} else {
+					odometer.setStatus("Normal");
+				}
+			}
+		} else {
 			odometer.setStatus("Normal");
+			odometerBean.setChkService(false);
 		}
-		
-		if(odometerBean.getChkService()) {
+		if (odometerBean.getChkService()) {
 			odometer.setStatus("Normal");
 		}
 		odometer.setOdometerVal(odometerBean.getOdometerVal());
