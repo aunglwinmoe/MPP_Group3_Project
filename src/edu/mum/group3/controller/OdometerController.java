@@ -99,7 +99,11 @@ public class OdometerController {
 		odometer.setVehicleId(odometerBean.getVehicleId());
 		odometer.setOdometerId(odometerBean.getId());
 
-		if (odometerBean.getId() != null) {
+		if (odometerBean.getId() != null ) {
+			if(odometerBean.getVehicleId() == null) {
+				odometerBean.setId(null);
+				odometerBean.setVehicleId(null);
+			}else {
 			double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
 			String previousStatus = odometerService.getOdometer(odometerBean.getId()).getStatus();
 			double previousOdometer = odometerService.getOdometer(odometerBean.getId()).getOdometerVal();
@@ -112,7 +116,7 @@ public class OdometerController {
 					odometer.setChkService(false);
 					odometerBean.setChkService(false);
 				} else {
-					
+
 					if (previousStatus.equals("Service is Needed")) {
 						odometer.setStatus("Service is Needed");
 						odometer.setChkService(false);
@@ -123,11 +127,43 @@ public class OdometerController {
 						odometerBean.setChkService(false);
 					}
 				}
-			}
+			}}
 		} else {
-			odometer.setStatus("Normal");
-			odometer.setChkService(false);
-			odometerBean.setChkService(false);
+			if (odometerBean.getId() == null) {
+				odometer.setStatus("Normal");
+				odometer.setChkService(false);
+				odometerBean.setChkService(false);
+			} else {
+				odometer.setStatus("dfdfd");
+				odometerBean.setVehicleId(null);
+				odometerBean.setId(null);
+				
+//				double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
+//				String previousStatus = odometerService.getOdometer(odometerBean.getId()).getStatus();
+//				double previousOdometer = odometerService.getOdometer(odometerBean.getId()).getOdometerVal();
+//				if (previousOdometer != 0 && !odometerBean.getChkService()) {
+//
+//					Double previous = (previousOdometer / limit);
+//					Double current = (odo / limit);
+//					if (current.intValue() > previous.intValue()) {
+//						odometer.setStatus("Service is Needed");
+//						odometer.setChkService(false);
+//						odometerBean.setChkService(false);
+//					} else {
+//
+//						if (previousStatus.equals("Service is Needed")) {
+//							odometer.setStatus("Service is Needed");
+//							odometer.setChkService(false);
+//							odometerBean.setChkService(false);
+//						} else {
+//							odometer.setStatus("Normal");
+//							odometer.setChkService(false);
+//							odometerBean.setChkService(false);
+//						}
+//					}
+//				}
+			}
+
 		}
 
 		if (odometerBean.getChkService()) {
