@@ -1,9 +1,11 @@
 package edu.mum.group3.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "User")
@@ -31,7 +33,8 @@ public class User implements Serializable{
 	private String password;
 	
 	@Column(name = "dateofbirth")
-	private LocalDate dateOfBirth;
+	@DateTimeFormat(pattern = "MM-dd-yyyy")
+	private Date dateOfBirth;
 
 	public Integer getUserId() {
 		return userId;
@@ -73,11 +76,11 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	

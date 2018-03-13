@@ -12,12 +12,14 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Create Contract Type</h3>
-		<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4">
+		<form:form method="POST" action="/group3/saveContractType.html" class="col-sm-4 needs-validation" novalidate="true">
 			<form:input path="id" value="${contractType.id}" type="hidden"/>
 			<div class="form-group row">
 				<form:label path="contractTypeName" class="col-sm-5 col-form-label">Name:</form:label>
 				<div class="col-sm-7">
-					<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control"/>
+					<form:input path="contractTypeName" value="${contractType.contractTypeName}"  class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Contract Type.</div>
 				</div>
 			</div>
 			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>

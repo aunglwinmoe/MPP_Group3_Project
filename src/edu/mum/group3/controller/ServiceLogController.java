@@ -1,13 +1,18 @@
 package edu.mum.group3.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,6 +45,23 @@ public class ServiceLogController {
 	
 	@Autowired
 	private VendorService vendorService;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(false);
+		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+	
+	@ModelAttribute("costList")
+	   public List<String> getWebFrameworkList() {
+	      List<String> webFrameworkList = new ArrayList<String>();
+	      webFrameworkList.add("Spring MVC");
+	      webFrameworkList.add("Struts 1");
+	      webFrameworkList.add("Struts 2");
+	      webFrameworkList.add("Apache Wicket");
+	      return webFrameworkList;
+	   }
 
 	@RequestMapping(value = "/saveServiceLog", method = RequestMethod.POST)
 	public ModelAndView saveServiceLog(@ModelAttribute("command") ServiceLogBean serviceLogBean, BindingResult result) {
@@ -79,6 +101,9 @@ public class ServiceLogController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("serviceLog", prepareServiceLogBean(serviceLogService.getServiceLog(serviceLogBean.getId())));
 		model.put("serviceLogs", prepareListofBean(serviceLogService.listServiceLogs()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("serviceTypes", prepareServiceTypeListofBean(serviceTypeService.listServiceTypes()));
+		model.put("vendors", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addServiceLog", model);
 	}
 
@@ -111,6 +136,16 @@ public class ServiceLogController {
 				bean.setDate(serviceLog.getDate());
 				bean.setVendorName(vendorService.getVendor(serviceLog.getVendorId()).getVendorName());
 				bean.setInvoiceRef(serviceLog.getInvoiceRef());
+				
+				/*List<ServiceTypeBean> costs = new ArrayList<>();
+				String[] tempCosts = serviceLog.getIncludedServices().split(",");
+				for(int i=0;tempCosts.length > i;i++){
+					ServiceTypeBean cbean = new ServiceTypeBean();
+					cbean.setId(Integer.parseInt(tempCosts[i]));
+					cbean.setServiceTypeName(serviceTypeService.getServiceType(Integer.parseInt(tempCosts[i])).getServiceTypeName());
+					costs.add(cbean);
+				}
+				bean.setIncludedServices(costs);*/
 				beans.add(bean);
 			}
 		}

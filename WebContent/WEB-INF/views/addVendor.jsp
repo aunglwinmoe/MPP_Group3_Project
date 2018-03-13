@@ -12,50 +12,57 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Create Vendor</h3>
-		<form:form method="POST" action="/group3/saveVendor.html" class="col-sm-4">
+		<form:form method="POST" action="/group3/saveVendor.html" class="col-sm-5 needs-validation" novalidate="true">
 			<form:input path="id" value="${vendor.id}" type="hidden"/>
 			<div class="form-group row">
 				<form:label path="vendorName" class="col-sm-5 col-form-label">Vendor Name:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vendorName" value="${vendor.vendorName}"  class="form-control"/>
+					<form:input path="vendorName" value="${vendor.vendorName}"  class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Vendor Name.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="title" class="col-sm-5 col-form-label">Title:</form:label>
 				<div class="col-sm-7">
-					<form:select path="title" class="form-control">
-						<form:option value="Mr">Mr</form:option>
-						<form:option value="Ms">Ms</form:option>
-						<%-- <form:option value="Mrs">Mrs</form:option>
-						<form:option value="Miss">Miss</form:option>
-						<form:option value="Dr">Dr</form:option>
-						<form:option value="Prof">Professor</form:option>
-						<form:option value="Sir">Sir</form:option> --%>
+					<form:select path="title" class="form-control" required="true">
+						<option <c:if test="${title}=='Mr'">selected</c:if> value="Mr">Mr</option>
+						<option <c:if test="${title}=='Ms'">selected</c:if>value="Ms">Ms</option>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Make name.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="ssn" class="col-sm-5 col-form-label">Vendor SSN:</form:label>
 				<div class="col-sm-7">
-					<form:input path="ssn" type="number" value="${vendor.ssn}" class="form-control"/>
+					<form:input path="ssn" value="${vendor.ssn}" pattern="\d{10}" class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Vendor SSN.</div>
 				</div>
 			</div>
 			<div class="form-group row">
-				<form:label path="phone" class="col-sm-5 col-form-label">Phone:</form:label>
+				<form:label path="phone" class="col-sm-5 col-form-label">Phone number:</form:label>
 				<div class="col-sm-7">
-					<form:input path="phone" type="number" value="${vendor.phone}"  class="form-control"/>
+					<form:input path="phone" value="${vendor.phone}" pattern="\d{10}" class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Phone number.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="email" class="col-sm-5 col-form-label">Email:</form:label>
 				<div class="col-sm-7">
-					<form:input path="email" value="${vendor.email}"  class="form-control"/>
+					<form:input path="email" value="${vendor.email}" type="email" class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Email.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="address" class="col-sm-5 col-form-label">Vendor Address:</form:label>
 				<div class="col-sm-7">
-					<form:input path="address" value="${vendor.address}"  class="form-control"/>
+					<form:input path="address" value="${vendor.address}" class="form-control" required="true"></form:input>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Vendor Address.</div>
 				</div>
 			</div>
 			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>
