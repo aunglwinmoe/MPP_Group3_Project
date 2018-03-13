@@ -23,10 +23,7 @@
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
 							<form:input path="vehicleName" value="${vehicle.vehicleName}"
-<<<<<<< HEAD
 								class="form-control" readonly="true" />
-=======
-								class="form-control" required="true"/>
 							<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid Vehicle name.</div>
 						</div>
@@ -41,7 +38,6 @@
 							</form:select>
 							<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please choose a Vehicle Model.</div>
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 						</div>
 					</div>
 
@@ -49,13 +45,10 @@
 						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-<<<<<<< HEAD
 								class="form-control" required="true" />
-=======
 								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}" placeholder="e.g ABC123"/>
 								<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 						</div>
 					</div>
 					<div class="form-group row">
