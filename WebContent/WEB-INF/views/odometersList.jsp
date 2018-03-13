@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,7 +31,7 @@
 						<tr>
 							<td><c:out value="${odometer.vehicleName}" /></td>
 							<td><c:out value="${odometer.odometerVal}" /></td>
-							<td><c:out value="${odometer.date}" /></td>
+							<td><c:out value="${fn:substring(odometer.date, 0, 10)}" /></td>
 							<td><c:out value="${odometer.status}" /></td>
 
 							<td align="center">

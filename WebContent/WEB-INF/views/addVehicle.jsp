@@ -43,7 +43,7 @@
 						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-								class="form-control" required="true" />
+								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}" placeholder="e.g ABC123"/>
 								<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
 						</div>

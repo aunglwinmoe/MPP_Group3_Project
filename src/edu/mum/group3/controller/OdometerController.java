@@ -87,6 +87,7 @@ public class OdometerController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("odometer", prepareModelBean(odometerService.getOdometer(odometerBean.getId())));
 		model.put("odometers", prepareListofBean(odometerService.listOdometers()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
 		return new ModelAndView("addOdometer", model);
 	}
 
