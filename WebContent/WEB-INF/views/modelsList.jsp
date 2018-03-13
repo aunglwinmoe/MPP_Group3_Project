@@ -27,8 +27,8 @@
 							<td><c:out value="${model.modelName}"/></td>
 							<td><c:out value="${model.makeName}"/></td>
 							<td align="center">
-								<a href="editModel.html?id=${model.id}"><i class="fas fa-pencil-alt"></i></a> 
-								<a href="deleteModel.html?id=${model.id}"><i class="fas fa-trash-alt"></i></a>
+								<a href="editModel.html?id=${model.id}" class="icon"><i class="fas fa-pencil-alt"></i></a> 
+								<a href="deleteModel.html?id=${model.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
 					</c:forEach>

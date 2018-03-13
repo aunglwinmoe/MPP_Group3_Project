@@ -46,6 +46,8 @@ public class ServiceLog implements Serializable{
 	@Column(name = "invoiceref")
 	private String invoiceRef;
 
+	@Column(name = "includedservices")
+	private String includedServices;
 	
 	public Integer getLogId() {
 		return logId;
@@ -111,5 +113,11 @@ public class ServiceLog implements Serializable{
 		this.invoiceRef = invoiceRef;
 	}
 
-	
+	public String getIncludedServices() {
+		return includedServices;
+	}
+
+	public void setIncludedServices(String includedServices) {
+		this.includedServices = includedServices;
+	}
 }

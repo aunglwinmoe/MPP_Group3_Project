@@ -13,6 +13,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" charset="utf8" src="css/datatables/datatables.js"></script>
 <script type="text/javascript" charset="utf8" src="css/fontawesome/fontawesome-all.min.js"></script>
+<script type="text/javascript" charset="utf8" src="css/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -33,6 +34,21 @@
 									$(this).prop("checked"));
 						});
 			});
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    var forms = document.getElementsByClassName('needs-validation');
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
 </script>
 </head>
 <body>
@@ -79,14 +95,14 @@
 			</div>
 		</div>
 
-		<div class="dropdown">
+		<!-- <div class="dropdown">
 			<button class="dropbtn">
 				Reporting <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
 				<a href="#">Accident Report</a> <a href="#">Vehicle Costs</a>
 			</div>
-		</div>
+		</div> -->
 
 		<a href="#mapping">Vehicle Unit Mapping</a> <a
 			href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>

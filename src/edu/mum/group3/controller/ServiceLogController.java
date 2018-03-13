@@ -52,6 +52,16 @@ public class ServiceLogController {
 		dateFormat.setLenient(false);
 		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
+	
+	@ModelAttribute("costList")
+	   public List<String> getWebFrameworkList() {
+	      List<String> webFrameworkList = new ArrayList<String>();
+	      webFrameworkList.add("Spring MVC");
+	      webFrameworkList.add("Struts 1");
+	      webFrameworkList.add("Struts 2");
+	      webFrameworkList.add("Apache Wicket");
+	      return webFrameworkList;
+	   }
 
 	@RequestMapping(value = "/saveServiceLog", method = RequestMethod.POST)
 	public ModelAndView saveServiceLog(@ModelAttribute("command") ServiceLogBean serviceLogBean, BindingResult result) {
@@ -91,6 +101,9 @@ public class ServiceLogController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("serviceLog", prepareServiceLogBean(serviceLogService.getServiceLog(serviceLogBean.getId())));
 		model.put("serviceLogs", prepareListofBean(serviceLogService.listServiceLogs()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("serviceTypes", prepareServiceTypeListofBean(serviceTypeService.listServiceTypes()));
+		model.put("vendors", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addServiceLog", model);
 	}
 
@@ -123,6 +136,16 @@ public class ServiceLogController {
 				bean.setDate(serviceLog.getDate());
 				bean.setVendorName(vendorService.getVendor(serviceLog.getVendorId()).getVendorName());
 				bean.setInvoiceRef(serviceLog.getInvoiceRef());
+				
+				/*List<ServiceTypeBean> costs = new ArrayList<>();
+				String[] tempCosts = serviceLog.getIncludedServices().split(",");
+				for(int i=0;tempCosts.length > i;i++){
+					ServiceTypeBean cbean = new ServiceTypeBean();
+					cbean.setId(Integer.parseInt(tempCosts[i]));
+					cbean.setServiceTypeName(serviceTypeService.getServiceType(Integer.parseInt(tempCosts[i])).getServiceTypeName());
+					costs.add(cbean);
+				}
+				bean.setIncludedServices(costs);*/
 				beans.add(bean);
 			}
 		}

@@ -12,12 +12,14 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Create Service Type</h3>
-		<form:form method="POST" action="/group3/saveServiceType.html" class="col-sm-4">
+		<form:form method="POST" action="/group3/saveServiceType.html" class="col-sm-4 needs-validation" novalidate="true">
 			<form:input path="id" value="${serviceType.id}" type="hidden"/>
 			<div class="form-group row">
 				<form:label path="serviceTypeName" class="col-sm-5 col-form-label">Name:</form:label>
 				<div class="col-sm-7">
-					<form:input path="serviceTypeName" value="${serviceType.serviceTypeName}"  class="form-control"/>
+					<form:input path="serviceTypeName" value="${serviceType.serviceTypeName}"  class="form-control" required="true"/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Service Type.</div>
 				</div>
 			</div>
 			<input type="submit" value="Submit" class="btn btn-primary mb-2"/>

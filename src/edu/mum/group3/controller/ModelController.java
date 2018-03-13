@@ -76,6 +76,7 @@ public class ModelController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("model", prepareModelBean(modelService.getModel(modelBean.getId())));
 		model.put("models", prepareListofBean(modelService.listModels()));
+		model.put("makes", prepareListofBean1(makeService.listMakes()));
 		return new ModelAndView("addModel", model);
 	}
 
@@ -122,6 +123,7 @@ public class ModelController {
 
 	private ModelBean prepareModelBean(Model model) {
 		ModelBean bean = new ModelBean();
+		bean.setMakeId(model.getMakeId());
 		bean.setModelName(model.getModelName());
 		bean.setId(model.getModelId());
 		return bean;

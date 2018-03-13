@@ -2,6 +2,7 @@ package edu.mum.group3.bean;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 public class ServiceLogBean {
 	 private Integer id;
@@ -81,4 +82,5 @@ public class ServiceLogBean {
 	public void setInvoiceRef(String invoiceRef) {
 		this.invoiceRef = invoiceRef;
 	}
+	
 }
