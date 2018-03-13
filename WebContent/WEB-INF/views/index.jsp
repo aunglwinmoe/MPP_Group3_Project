@@ -17,19 +17,40 @@
 <script type="text/javascript" charset="utf8" src="css/fontawesome/fontawesome-all.min.js"></script>
 <script type="text/javascript" charset="utf8" src="css/bootstrap/js/bootstrap.min.js"></script>
 <title>Vehicle Management System</title>
+<script type="text/javascript">
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    var forms = document.getElementsByClassName('needs-validation');
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+</script>
 </head>
 <body>
 	<div class="container">
-		<div class="row justify-content-md-center" style="margin-top:200px">
+		<div class="row justify-content-md-center" style="margin-top:180px">
 			<div class="login_logo"></div>
-			<form:form method="POST" action="/group3/login.html" class="col-sm-4">
+			<form:form method="POST" action="/group3/login.html" class="col-sm-4 needs-validation" novalidate="true">
 				<div class="form-group">
 					<label class="col-form-label">User Name:</label>
 					<input type="text" name="userName" id="userName" size="17" class="form-control" required/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid User name.</div>
 				</div>
 				<div class="form-group">
 					<label class="col-form-label">Password:</label> 
 					<input type="password" id="password" name="password" size="17"  class="form-control" required/>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid password.</div>
 				</div>
 				<input type="submit" value="Login" class="btn btn-primary mb-2"/>
 			</form:form>
