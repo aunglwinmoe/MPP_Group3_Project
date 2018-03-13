@@ -1,22 +1,30 @@
 package edu.mum.group3.controller;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mum.group3.bean.FuelLogBean;
+import edu.mum.group3.bean.VehicleBean;
 import edu.mum.group3.model.FuelLog;
+import edu.mum.group3.model.Vehicle;
 import edu.mum.group3.service.FuelLogService;
+import edu.mum.group3.service.VehicleService;
 
 /**
  * @author Lwin Moe Aung
@@ -27,6 +35,16 @@ public class FuelLogController {
 
 	@Autowired
 	private FuelLogService fuelLogService;
+	
+	@Autowired
+	private VehicleService vehicleService;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(false);
+		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
 
 	@RequestMapping(value = "/saveFuelLog", method = RequestMethod.POST)
 	public ModelAndView saveFuelLog(@ModelAttribute("command") FuelLogBean fuelLogBean, BindingResult result) {
@@ -46,6 +64,7 @@ public class FuelLogController {
 	public ModelAndView addFuelLog(@ModelAttribute("command") FuelLogBean fuelLogBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("fuelLogs", prepareListofBean(fuelLogService.listFuelLogs()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
 		return new ModelAndView("addFuelLog", model);
 	}
 
@@ -84,6 +103,21 @@ public class FuelLogController {
 		return fuelLog;
 	}
 
+	private List<VehicleBean> prepareVehicleListofBean(List<Vehicle> vehicles) {
+		List<VehicleBean> beans = null;
+		if (vehicles != null && !vehicles.isEmpty()) {
+			beans = new ArrayList<VehicleBean>();
+			VehicleBean bean = null;
+			for (Vehicle vehicle : vehicles) {
+				bean = new VehicleBean();
+				bean.setId(vehicle.getVehicleId());
+				bean.setVehicleName(vehicle.getVehicleName());
+				beans.add(bean);
+			}
+		}
+		return beans;
+	}
+	
 	private List<FuelLogBean> prepareListofBean(List<FuelLog> fuelLogs) {
 		List<FuelLogBean> beans = null;
 		if (fuelLogs != null && !fuelLogs.isEmpty()) {
@@ -98,10 +132,9 @@ public class FuelLogController {
 				bean.setInvoiceReference(fuelLog.getInvoiceReference());
 				bean.setLiter(fuelLog.getLiter());
 				bean.setOtherInfo(fuelLog.getOtherInfo());
-				bean.setPricePerLiter(fuelLog.getPricePerLiter());
-				bean.setPurchaserId(fuelLog.getPurchaserId());
+				bean.setPricePerLiter(fuelLog.getPricePerLiter()); 
 				bean.setTotalPrice(fuelLog.getTotalPrice());
-				bean.setVehicleId(fuelLog.getVehicleId());
+				bean.setVehicleName(vehicleService.getVehicle(fuelLog.getVehicleId()).getVehicleName());
 				bean.setVendorId(fuelLog.getVendorId());
 				beans.add(bean);
 			}

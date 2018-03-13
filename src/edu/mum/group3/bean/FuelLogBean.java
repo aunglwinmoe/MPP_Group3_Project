@@ -1,6 +1,6 @@
 package edu.mum.group3.bean;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @author Lwin Moe Aung
@@ -10,10 +10,11 @@ public class FuelLogBean {
 
 	private Integer id;
 	private Integer vehicleId;
+	private String vehicleName;
 	private double liter;
 	private double pricePerLiter;
 	private double totalPrice;
-	private LocalDate date;
+	private Date date;
 	private String invoiceReference;
 	private String otherInfo;
 	private Integer vendorId;
@@ -33,6 +34,14 @@ public class FuelLogBean {
 
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
+	}
+
+	public String getVehicleName() {
+		return vehicleName;
+	}
+
+	public void setVehicleName(String vehicleName) {
+		this.vehicleName = vehicleName;
 	}
 
 	public double getLiter() {
@@ -59,11 +68,11 @@ public class FuelLogBean {
 		this.totalPrice = totalPrice;
 	}
 
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

@@ -10,32 +10,35 @@
 </head>
 <body>
 	<div class="container">
-		<h3 class="page-title">Odometers</h3>
-		<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
+		<h3 class="page-title">Vehicle Costs</h3>
+		<a href="addVehicleCost.html" class="btn btn-primary mb-2">Create</a>
 		<button onclick="myFunction()">Print this page</button>
 
-		<c:if test="${!empty odometers}">
-			<table class="table table-hover" id="odometerListTable">
+		<c:if test="${!empty vehiclecosts}">
+			<table class="table table-hover" id="vehicleCostListTable">
 				<thead>
 					<tr>
 						<th>Vehicle</th>
-						<th>Odometer</th>
+						<th>Type</th>
 						<th>Date</th>
-						<th>Status</th>
+						<th>Total Price</th>
+						<th>Cost Description</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${odometers}" var="odometer">
+					<c:forEach items="${vehiclecosts}" var="vehiclecost">
 						<tr>
-							<td><c:out value="${odometer.vehicleName}" /></td>
-							<td><c:out value="${odometer.odometerVal}" /></td>
-							<td><c:out value="${odometer.date}" /></td>
-							<td><c:out value="${odometer.status}" /></td>
+							<td><c:out value="${vehiclecost.vehicleName}" /></td>
+
+							<td><c:out value="${vehiclecost.serviceTypeName}" /></td>
+							<td><c:out value="${vehiclecost.date}" /></td>
+							<td><c:out value="${vehiclecost.totalPrice}" /></td>
+							<td><c:out value="${vehiclecost.costDesc}" /></td>
 
 							<td align="center"><a
-								href="editOdometer.html?id=${odometer.id}">Edit</a> | <a
-								href="deleteOdometer.html?id=${odometer.id}">Delete</a></td>
+								href="editOdometer.html?id=${vehiclecost.id}">Edit</a> | <a
+								href="deleteOdometer.html?id=${vehiclecost.id}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -48,7 +51,7 @@
 		window.print();
 	}
 	$(document).ready(function() {
-		$('#odometerListTable').DataTable();
+		$('#vehicleCostListTable').DataTable();
 	});
 </script>
 </html>

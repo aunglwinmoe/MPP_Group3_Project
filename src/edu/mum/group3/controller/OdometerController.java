@@ -131,7 +131,7 @@ public class OdometerController {
 				bean.setChkService(odometer.getChkService());
 				bean.setDate(odometer.getDate());
 				bean.setStatus(odometer.getStatus());
-				bean.setVehicleId(odometer.getVehicleId());
+				bean.setVehicleName(vehicleService.getVehicle(odometer.getVehicleId()).getVehicleName());
 				bean.setServiceDate(odometer.getServiceDate());
 				bean.setId(odometer.getOdometerId());
 

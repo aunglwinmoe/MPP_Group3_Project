@@ -12,8 +12,8 @@
 </head>
 <body>
 	<div class="container">
-		<h3 class="page-title">Fuel Log</h3>
-		<form:form method="POST" action="/group3/saveFuelLog.html"
+		<h3 class="page-title">Vehicle Cost</h3>
+		<form:form method="POST" action="/group3/saveVehicleCost.html"
 			class="col-sm-4">
 
 			<br />
@@ -29,59 +29,43 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<form:label path="liter" class="col-sm-5 col-form-label">Liter:</form:label>
+				<form:label path="vehicleId" class="col-sm-5 col-form-label">Service Type:</form:label>
 				<div class="col-sm-7">
-					<form:input path="liter" value="${fuelLog.liter}"
+					<form:select path="serviceTypeId" class="form-control">
+						<c:forEach items="${servicetypes}" var="servicetype">
+							<form:option value="${servicetype.id}">${servicetype.serviceTypeName}</form:option>
+						</c:forEach>
+					</form:select>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<form:label path="date" class="col-sm-5 col-form-label">Date:</form:label>
+				<div class="col-sm-7">
+					<fmt:formatDate pattern="yyyy-MM-dd" value="${vehiclecost.date}"
+						var="vehiclecostDate" />
+					<form:input id="date" type="date" path="date"
+						value="${vehiclecostDate}" class="form-control" />
+				</div>
+			</div>
+
+
+			<div class="form-group row">
+				<form:label path="totalPrice" class="col-sm-5 col-form-label">Total Price:</form:label>
+				<div class="col-sm-7">
+					<form:input path="totalPrice" value="${vehiclecost.totalPrice}"
 						class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<form:label path="pricePerLiter" class="col-sm-5 col-form-label">Price Per Liter:</form:label>
+				<form:label path="costDesc" class="col-sm-5 col-form-label">Cost Description:</form:label>
 				<div class="col-sm-7">
-					<form:input path="pricePerLiter" value="${fuelLog.pricePerLiter}"
+					<form:textarea path="costDesc" value="${vehiclecost.costDesc}"
 						class="form-control" />
 				</div>
 			</div>
-			<div class="form-group row">
-				<form:label path="totalPrice" class="col-sm-5 col-form-label">Total Price:</form:label>
-				<div class="col-sm-7">
-					<form:input path="totalPrice" value="${fuelLog.totalPrice}"
-						class="form-control" />
-				</div>
-			</div>
-			<div class="form-group row">
-				<form:label path="date" class="col-sm-5 col-form-label">Date:</form:label>
-				<div class="col-sm-7">
-					<fmt:formatDate pattern="yyyy-MM-dd" value="${fuelLog.date}"
-						var="fuelLogDate" />
-					<form:input id="date" type="date" path="date"
-						value="${fuelLogDate}" class="form-control" />
-				</div>
-			</div>
-			
-			
-			<div class="form-group row">
-				<form:label path="invoiceReference" class="col-sm-5 col-form-label">Invoice Reference:</form:label>
-				<div class="col-sm-7">
-					<form:input path="invoiceReference"
-						value="${fuelLog.invoiceReference}" class="form-control" />
-				</div>
-			</div>
-			<div class="form-group row">
-				<form:label path="otherInfo" class="col-sm-5 col-form-label">Other Info:</form:label>
-				<div class="col-sm-7">
-					<form:input path="otherInfo" value="${fuelLog.otherInfo}"
-						class="form-control" />
-				</div>
-			</div>
-			<div class="form-group row">
-				<form:label path="vendorId" class="col-sm-5 col-form-label">Vendor:</form:label>
-				<div class="col-sm-7">
-					<form:input path="vendorId" value="${fuelLog.vendorId}"
-						class="form-control" />
-				</div>
-			</div> 
+
 			<center>
 				<input type="submit" value="Save" class="btn btn-primary mb-2" />
 			</center>

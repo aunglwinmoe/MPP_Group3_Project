@@ -6,13 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vehicle Management System</title>
 <link rel="stylesheet" type="text/css" href="css/design.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/datatables/datatables.css">
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/datatables/datatables.css">
 <script type="text/JavaScript" src="css/design.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-<script type="text/javascript" charset="utf8" src="css/datatables/datatables.js"></script>
-<script type="text/javascript" charset="utf8" src="css/fontawesome/fontawesome-all.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8"
+	src="css/datatables/datatables.js"></script>
+<script type="text/javascript" charset="utf8"
+	src="css/fontawesome/fontawesome-all.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -36,7 +42,7 @@
 </script>
 </head>
 <body>
-<h1 align="center" class="page-title">Vehicle Management System</h1>
+	<h1 align="center" class="page-title">Vehicle Management System</h1>
 	<div class="topnav" id="myTopnav">
 
 		<div class="dropdown">
@@ -45,7 +51,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a href="vehicles.html">Vehicles</a> <a href="odometers.html">Vehicles
-					Odometer</a> <a href="#">Vehicle Costs</a> <a href="contracts.html">Vehicle
+					Odometer</a> <a href="vehiclecosts.html">Vehicle Costs</a> <a href="contracts.html">Vehicle
 					Contracts</a>
 			</div>
 		</div>
@@ -55,8 +61,8 @@
 				Logs <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="fuelLogs.html">Vehicle Fuel Logs</a> <a href="serviceLogs.html">Vehicles Services
-					Logs</a>
+				<a href="fuelLogs.html">Vehicle Fuel Logs</a> <a
+					href="serviceLogs.html">Vehicles Services Logs</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -79,14 +85,15 @@
 			</div>
 		</div>
 
-		<div class="dropdown">
+		<!-- <div class="dropdown">
 			<button class="dropbtn">
 				Reporting <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="#">Accident Report</a> <a href="#">Vehicle Costs</a>
+				<a href="#">Accident Report</a> <a href="vehiclecosts.html">Vehicle
+					Costs</a>
 			</div>
-		</div>
+		</div>-->
 
 		<a href="#mapping">Vehicle Unit Mapping</a> <a
 			href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
