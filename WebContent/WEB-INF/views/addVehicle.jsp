@@ -111,8 +111,6 @@
 					</div>
 				</div>
 				<div class="col-sm">
-=======
->>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 					<div class="form-group row">
 						<form:label path="seatsNum" class="col-sm-5 col-form-label">Seats Number:</form:label>
 						<div class="col-sm-7">
