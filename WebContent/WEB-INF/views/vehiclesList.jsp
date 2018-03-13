@@ -9,7 +9,7 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="width: 100%; max-width: 100% !important">
 		<h3 class="page-title">Vehicles</h3>
 		<a href="addVehicle.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		<c:if test="${!empty vehicles}">
