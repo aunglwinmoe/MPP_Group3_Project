@@ -26,8 +26,8 @@
 				<form:label path="title" class="col-sm-5 col-form-label">Title:</form:label>
 				<div class="col-sm-7">
 					<form:select path="title" class="form-control" required="true">
-						<option <c:if test="${title}=='Mr'">selected</c:if> value="Mr">Mr</option>
-						<option <c:if test="${title}=='Ms'">selected</c:if>value="Ms">Ms</option>
+						<option <c:if test="${vendor.title == 'Mr'}">selected</c:if> value="Mr">Mr</option>
+						<option <c:if test="${vendor.title == 'Ms'}">selected</c:if> value="Ms">Ms</option>
 					</form:select>
 					<div class="valid-feedback">Looks good!</div>
 				    <div class="invalid-feedback">Please enter a valid Make name.</div>
@@ -36,7 +36,7 @@
 			<div class="form-group row">
 				<form:label path="ssn" class="col-sm-5 col-form-label">Vendor SSN:</form:label>
 				<div class="col-sm-7">
-					<form:input path="ssn" value="${vendor.ssn}" pattern="\d{10}" class="form-control" required="true"/>
+					<form:input path="ssn" value="${vendor.ssn}" pattern="\d{9}" class="form-control" required="true"/>
 					<div class="valid-feedback">Looks good!</div>
 				    <div class="invalid-feedback">Please enter a valid Vendor SSN.</div>
 				</div>

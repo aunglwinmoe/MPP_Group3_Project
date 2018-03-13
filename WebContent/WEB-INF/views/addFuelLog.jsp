@@ -14,18 +14,20 @@
 	<div class="container">
 		<h3 class="page-title">Fuel Log</h3>
 		<form:form method="POST" action="/group3/saveFuelLog.html"
-			class="col-sm-4">
+			class="col-sm-6 needs-validation" novalidate="true">
 
 			<br />
 			<form:hidden path="id" />
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:select path="vehicleId" class="form-control">
+					<form:select path="vehicleId" class="form-control" required="true">
 						<c:forEach items="${vehicles}" var="vehicle">
-							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+							<option <c:if test="${vehicle.id eq fuelLog.vehicleId}">selected</c:if> value="${vehicle.id}">${vehicle.vehicleName}</option>
 						</c:forEach>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a Vehicle.</div>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -56,7 +58,9 @@
 					<fmt:formatDate pattern="yyyy-MM-dd" value="${fuelLog.date}"
 						var="fuelLogDate" />
 					<form:input id="date" type="date" path="date"
-						value="${fuelLogDate}" class="form-control" />
+						value="${fuelLogDate}" class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Date.</div>
 				</div>
 			</div>
 			
@@ -78,8 +82,11 @@
 			<div class="form-group row">
 				<form:label path="vendorId" class="col-sm-5 col-form-label">Vendor:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vendorId" value="${fuelLog.vendorId}"
-						class="form-control" />
+					<form:select path="vendorId" class="form-control" required="true">
+						<c:forEach items="${vendors}" var="vendor">
+							<option <c:if test="${vendor.id eq fuelLog.vendorId}">selected</c:if> value="${vendor.id}">${vendor.vendorName}</option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div> 
 			<center>

@@ -21,10 +21,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.mum.group3.bean.FuelLogBean;
 import edu.mum.group3.bean.VehicleBean;
+import edu.mum.group3.bean.VendorBean;
 import edu.mum.group3.model.FuelLog;
 import edu.mum.group3.model.Vehicle;
+import edu.mum.group3.model.Vendor;
 import edu.mum.group3.service.FuelLogService;
 import edu.mum.group3.service.VehicleService;
+import edu.mum.group3.service.VendorService;
 
 /**
  * @author Lwin Moe Aung
@@ -38,6 +41,9 @@ public class FuelLogController {
 	
 	@Autowired
 	private VehicleService vehicleService;
+	
+	@Autowired
+	private VendorService vendorService;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
@@ -65,6 +71,7 @@ public class FuelLogController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("fuelLogs", prepareListofBean(fuelLogService.listFuelLogs()));
 		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("vendors", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addFuelLog", model);
 	}
 
@@ -82,6 +89,8 @@ public class FuelLogController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("fuelLog", prepareModelBean(fuelLogService.getFuelLog(fuelLogBean.getId())));
 		model.put("fuelLogs", prepareListofBean(fuelLogService.listFuelLogs()));
+		model.put("vehicles", prepareVehicleListofBean(vehicleService.listVehicles()));
+		model.put("vendors", prepareVendorListofBean(vendorService.listVendors()));
 		return new ModelAndView("addFuelLog", model);
 	}
 
@@ -93,7 +102,6 @@ public class FuelLogController {
 		fuelLog.setLiter(fuelLogBean.getLiter());
 		fuelLog.setOtherInfo(fuelLogBean.getOtherInfo());
 		fuelLog.setPricePerLiter(fuelLogBean.getPricePerLiter());
-		fuelLog.setPurchaserId(fuelLogBean.getPurchaserId());
 		fuelLog.setTotalPrice(fuelLogBean.getTotalPrice());
 		fuelLog.setVehicleId(fuelLogBean.getVehicleId());
 		fuelLog.setVendorId(fuelLogBean.getVendorId());
@@ -118,6 +126,21 @@ public class FuelLogController {
 		return beans;
 	}
 	
+	private List<VendorBean> prepareVendorListofBean(List<Vendor> vendors) {
+		List<VendorBean> beans = null;
+		if (vendors != null && !vendors.isEmpty()) {
+			beans = new ArrayList<VendorBean>();
+			VendorBean bean = null;
+			for (Vendor vendor : vendors) {
+				bean = new VendorBean();
+				bean.setId(vendor.getVendorId());
+				bean.setVendorName(vendor.getVendorName());
+				beans.add(bean);
+			}
+		}
+		return beans;
+	}
+	
 	private List<FuelLogBean> prepareListofBean(List<FuelLog> fuelLogs) {
 		List<FuelLogBean> beans = null;
 		if (fuelLogs != null && !fuelLogs.isEmpty()) {
@@ -136,6 +159,7 @@ public class FuelLogController {
 				bean.setTotalPrice(fuelLog.getTotalPrice());
 				bean.setVehicleName(vehicleService.getVehicle(fuelLog.getVehicleId()).getVehicleName());
 				bean.setVendorId(fuelLog.getVendorId());
+				bean.setVendorName(vendorService.getVendor(fuelLog.getVendorId()).getVendorName());
 				beans.add(bean);
 			}
 		}
@@ -150,7 +174,6 @@ public class FuelLogController {
 		bean.setLiter(fuelLog.getLiter());
 		bean.setOtherInfo(fuelLog.getOtherInfo());
 		bean.setPricePerLiter(fuelLog.getPricePerLiter());
-		bean.setPurchaserId(fuelLog.getPurchaserId());
 		bean.setTotalPrice(fuelLog.getTotalPrice());
 		bean.setVehicleId(fuelLog.getVehicleId());
 		bean.setVendorId(fuelLog.getVendorId());

@@ -18,7 +18,7 @@ public class FuelLogBean {
 	private String invoiceReference;
 	private String otherInfo;
 	private Integer vendorId;
-	private Integer purchaserId; // remove
+	private String vendorName;
 
 	public Integer getId() {
 		return id;
@@ -100,12 +100,11 @@ public class FuelLogBean {
 		this.vendorId = vendorId;
 	}
 
-	public Integer getPurchaserId() {
-		return purchaserId;
+	public String getVendorName() {
+		return vendorName;
 	}
 
-	public void setPurchaserId(Integer purchaserId) {
-		this.purchaserId = purchaserId;
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
 	}
-
 }
