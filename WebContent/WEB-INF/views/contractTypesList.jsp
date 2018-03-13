@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Contract Types</h3>
-		<a href="addContractType.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addContractType.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 	
 		<c:if test="${!empty contractTypes}">
 			<table class="table table-hover">

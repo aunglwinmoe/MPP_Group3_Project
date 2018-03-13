@@ -13,7 +13,7 @@
 	<div class="container">
 		<h3 class="page-title">Contracts</h3>
 
-		<a href="addContract.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addContract.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 
 		<c:if test="${!empty contracts}">
 			<table class="table table-hover" id="contractListTable">

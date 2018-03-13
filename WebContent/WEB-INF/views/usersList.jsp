@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Users</h3>
-		<a href="addUser.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addUser.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		
 		<c:if test="${!empty users}">
 			<table class="table table-hover">

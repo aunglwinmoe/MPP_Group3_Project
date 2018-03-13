@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Service Logs</h3>
-		<a href="addServiceLog.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addServiceLog.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 	
 		<c:if test="${!empty serviceLogs}">
 			<table class="table table-hover">

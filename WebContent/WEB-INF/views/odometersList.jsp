@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Odometers</h3>
-		<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addOdometer.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		<!-- <button onclick="myFunction()">Print this page</button>-->
 
 		<c:if test="${!empty odometers}">

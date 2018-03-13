@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Service Types</h3>
-		<a href="addServiceType.html" class="btn btn-primary mb-2">Create</a>
+		<a href="addServiceType.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		
 		<c:if test="${!empty serviceTypes}">
 			<table class="table table-hover">
