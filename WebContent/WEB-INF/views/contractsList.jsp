@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,19 +34,19 @@
 				<tbody>
 					<c:forEach items="${contracts}" var="contract">
 						<tr>
-							<td><c:out value="${contract.contractTypeId}" /></td>
+							<td><c:out value="${contract.contractTypeName}" /></td>
 							<td><c:out value="${contract.odometerAtCreation}" /></td>
-							<td><c:out value="${contract.invoiceDate}" /></td>
-							<td><c:out value="${contract.contractStartDate}" /></td>
-							<td><c:out value="${contract.contractExpDate}" /></td>
+							<td><c:out value="${fn:substring(contract.invoiceDate, 0, 10)}" /></td>
+							<td><c:out value="${fn:substring(contract.contractStartDate, 0, 10)}" /></td>
+							<td><c:out value="${fn:substring(contract.contractExpDate, 0, 10)}" /></td>
 							<td><c:out value="${contract.contractorId}" /></td>
-							<td><c:out value="${contract.vendorId}" /></td>
+							<td><c:out value="${contract.vendorName}" /></td>
 							<td><c:out value="${contract.rentalCost}" /></td>
 							<td><c:out value="${contract.termsAndConditions}" /></td>
 
 							<td align="center"><a
-								href="editContract.html?id=${contract.id}">Edit</a> | <a
-								href="deleteContract.html?id=${contract.id}">Delete</a></td>
+								href="editContract.html?id=${contract.id}" class="icon"><i class="fas fa-pencil-alt"></i></a><a
+								href="deleteContract.html?id=${contract.id}" class="icon"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

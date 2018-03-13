@@ -15,18 +15,20 @@
 	<div class="container">
 		<h3 class="page-title">Odometer</h3>
 		<form:form method="POST" action="/group3/saveOdometer.html"
-			class="col-sm-4">
+			class="col-sm-4 needs-validation" novalidate="true">
 
 			<form:hidden path="id" />
 
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:select path="vehicleId" class="form-control">
+					<form:select path="vehicleId" class="form-control" required="true">
 						<c:forEach items="${vehicles}" var="vehicle">
-							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+							<option <c:if test="${vehicle.id eq odometer.vehicleId}">selected</c:if> value="${vehicle.id}">${vehicle.vehicleName}</option>
 						</c:forEach>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a valid Vehicle.</div>
 				</div>
 			</div>
 
@@ -34,7 +36,9 @@
 				<form:label path="odometerVal" class="col-sm-5 col-form-label">Odometer:</form:label>
 				<div class="col-sm-7">
 					<form:input path="odometerVal" value="${odometer.odometerVal}"
-						class="form-control" />
+						class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Odometer.</div>
 				</div>
 			</div>
 
@@ -44,14 +48,18 @@
 					<fmt:formatDate pattern="yyyy-MM-dd" value="${odometer.date}"
 						var="odometerDate" />
 					<form:input id="date" type="date" path="date"
-						value="${odometerDate}" class="form-control" />
+						value="${odometerDate}" class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Date.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="status" class="col-sm-5 col-form-label">Status:</form:label>
 				<div class="col-sm-7">
 					<form:input path="status" value="${odometer.status}"
-						class="form-control" />
+						class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Status.</div>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -76,11 +84,6 @@
 				<jsp:setProperty name="odometer" property="status"
 					value="${odometer.status}" />
 			</jsp:useBean>
-
-			<p>
-				Student First Name:
-				<jsp:getProperty name="odometer" property="status" />
-			</p>
 
 		</form:form>
 	</div>

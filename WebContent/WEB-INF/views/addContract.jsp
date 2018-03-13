@@ -14,18 +14,20 @@
 	<div class="container">
 		<h3 class="page-title">Vehicle Contract</h3>
 		<form:form method="POST" action="/group3/saveContract.html"
-			class="col-sm-4">
+			class="col-sm-6 needs-validation" novalidate="true">
 
 			<form:hidden path="id" />
 
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:select path="vehicleId" class="form-control">
+					<form:select path="vehicleId" class="form-control" required="true">
 						<c:forEach items="${vehicles}" var="vehicle">
-							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+							<option <c:if test="${vehicle.id eq contract.vehicleId}">selected</c:if> value="${vehicle.id}">${vehicle.vehicleName}</option>
 						</c:forEach>
 					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a Vehicle.</div>
 				</div>
 			</div>
 
@@ -34,7 +36,7 @@
 				<div class="col-sm-7">
 					<form:select path="contractTypeId" class="form-control">
 						<c:forEach items="${contracttypes}" var="contracttype">
-							<form:option value="${contracttype.id}">${contracttype.contractTypeName}</form:option>
+							<option <c:if test="${contracttype.id eq contract.contractTypeId}">selected</c:if> value="${contracttype.id}">${contracttype.contractTypeName}</option>
 						</c:forEach>
 					</form:select>
 				</div>
@@ -55,7 +57,9 @@
 					<fmt:formatDate pattern="yyyy-MM-dd"
 						value="${contract.invoiceDate}" var="invDate" />
 					<form:input id="invoiceDate" type="date" path="invoiceDate"
-						value="${invDate}" class="form-control" />
+						value="${invDate}" class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Invoice Date.</div>
 				</div>
 			</div>
 
@@ -66,7 +70,9 @@
 						value="${contract.contractStartDate}" var="contractSDate" />
 					<form:input id="contractStartDate" type="date"
 						path="contractStartDate" value="${contractSDate}"
-						class="form-control" />
+						class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Contract Start Date.</div>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -75,7 +81,9 @@
 					<fmt:formatDate pattern="yyyy-MM-dd"
 						value="${contract.contractExpDate}" var="contractExpirationDate" />
 					<form:input id="contractExpDate" type="date" path="contractExpDate"
-						value="${contractExpirationDate}" class="form-control" />
+						value="${contractExpirationDate}" class="form-control" required="true"/>
+						<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please enter a valid Contract Expiration Date.</div>
 				</div>
 			</div>
 
@@ -89,8 +97,13 @@
 			<div class="form-group row">
 				<form:label path="vendorId" class="col-sm-5 col-form-label">Vendor:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vendorId" value="${contract.vendorId}"
-						class="form-control" />
+					<form:select path="vendorId" class="form-control" required="true">
+						<c:forEach items="${vendors}" var="vendor">
+							<option <c:if test="${vendor.id eq contract.vendorId}">selected</c:if> value="${vendor.id}">${vendor.vendorName}</option>
+						</c:forEach>
+					</form:select>
+					<div class="valid-feedback">Looks good!</div>
+				    <div class="invalid-feedback">Please choose a Vendor.</div>
 				</div>
 			</div>
 			<div class="form-group row">

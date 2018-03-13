@@ -15,6 +15,7 @@ public class ContractBean {
 	private Date contractExpDate;
 	private Integer contractorId;
 	private Integer vendorId;
+	private String vendorName;
 	private double rentalCost;
 	private String termsAndConditions;
 
@@ -32,6 +33,14 @@ public class ContractBean {
 
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
+	}
+
+	public String getVendorName() {
+		return vendorName;
+	}
+
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
 	}
 
 	public Integer getContractTypeId() {

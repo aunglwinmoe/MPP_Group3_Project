@@ -21,7 +21,6 @@
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>User Name</th>
-						<th>Date of Birth</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -32,7 +31,6 @@
 							<td><c:out value="${user.firstName}"/></td>
 							<td><c:out value="${user.lastName}"/></td>
 							<td><c:out value="${user.userName}"/></td>
-							<td><c:out value="${fn:substring(user.dateOfBirth, 0, 10)}"/></td>
 							<td align="center">
 								<a href="editUser.html?id=${user.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
 								<a href="deleteUser.html?id=${user.id}" class="icon"><i class="fas fa-trash-alt"></i></a>

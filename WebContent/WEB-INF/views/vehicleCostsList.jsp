@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,13 +32,13 @@
 							<td><c:out value="${vehiclecost.vehicleName}" /></td>
 
 							<td><c:out value="${vehiclecost.serviceTypeName}" /></td>
-							<td><c:out value="${vehiclecost.date}" /></td>
+							<td><c:out value="${fn:substring(vehiclecost.date, 0, 10)}" /></td>
 							<td><c:out value="${vehiclecost.totalPrice}" /></td>
 							<td><c:out value="${vehiclecost.costDesc}" /></td>
 
 							<td align="center"><a
-								href="editOdometer.html?id=${vehiclecost.id}">Edit</a> | <a
-								href="deleteOdometer.html?id=${vehiclecost.id}">Delete</a></td>
+								href="editVehicleCost.html?id=${vehiclecost.id}" class="icon"><i class="fas fa-pencil-alt"></i></a><a
+								href="deleteVehicleCost.html?id=${vehiclecost.id}" class="icon"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

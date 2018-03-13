@@ -1,11 +1,9 @@
 package edu.mum.group3.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.*;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "User")
@@ -31,10 +29,6 @@ public class User implements Serializable{
 	
 	@Column(name = "password")
 	private String password;
-	
-	@Column(name = "dateofbirth")
-	@DateTimeFormat(pattern = "MM-dd-yyyy")
-	private Date dateOfBirth;
 
 	public Integer getUserId() {
 		return userId;
@@ -76,12 +70,4 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-	
 }

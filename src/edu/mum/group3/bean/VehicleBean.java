@@ -10,6 +10,8 @@ import java.util.Date;
 public class VehicleBean {
 	private Integer id;
 	private String vehicleName;
+	private Integer modelId;
+	private String modelName;
 	private String licensePlate;
 	private String chassisNumber;
 	private String modelYear;
@@ -41,6 +43,23 @@ public class VehicleBean {
 
 	public void setVehicleName(String vehicleName) {
 		this.vehicleName = vehicleName;
+	}
+
+	
+	public Integer getModelId() {
+		return modelId;
+	}
+
+	public void setModelId(Integer modelId) {
+		this.modelId = modelId;
+	}
+	
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
 	}
 
 	public String getLicensePlate() {
