@@ -94,10 +94,21 @@ public class OdometerController {
 	private Odometer prepareModel(OdometerBean odometerBean) {
 		Odometer odometer = new Odometer();
 
+		double limit = vehicleService.getVehicle(odometerBean.getVehicleId()).getLimitedOdometer();
+		if (odometerBean.getOdometerVal() >= limit) {
+			odometer.setStatus("Service is Needed");
+		}
+		else {
+			odometer.setStatus("Normal");
+		}
+		
+		if(odometerBean.getChkService()) {
+			odometer.setStatus("Normal");
+		}
 		odometer.setOdometerVal(odometerBean.getOdometerVal());
 		odometer.setChkService(odometerBean.getChkService());
 		odometer.setDate(odometerBean.getDate());
-		odometer.setStatus(odometerBean.getStatus());
+
 		odometer.setVehicleId(odometerBean.getVehicleId());
 		odometer.setServiceDate(odometerBean.getServiceDate());
 		odometer.setOdometerId(odometerBean.getId());
