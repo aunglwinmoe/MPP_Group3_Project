@@ -33,9 +33,10 @@
 							<td><c:out value="${odometer.date}" /></td>
 							<td><c:out value="${odometer.status}" /></td>
 
-							<td align="center"><a
-								href="editOdometer.html?id=${odometer.id}">Edit</a> | <a
-								href="deleteOdometer.html?id=${odometer.id}">Delete</a></td>
+							<td align="center">
+								<a href="editOdometer.html?id=${odometer.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
+								<a href="deleteOdometer.html?id=${odometer.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -47,8 +48,5 @@
 	function myFunction() {
 		window.print();
 	}
-	$(document).ready(function() {
-		$('#odometerListTable').DataTable();
-	});
 </script>
 </html>

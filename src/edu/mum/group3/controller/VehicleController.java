@@ -1,7 +1,6 @@
 package edu.mum.group3.controller;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -23,6 +22,7 @@ import edu.mum.group3.bean.ModelBean;
 import edu.mum.group3.bean.VehicleBean;
 import edu.mum.group3.model.Model;
 import edu.mum.group3.model.Vehicle;
+import edu.mum.group3.service.ModelService;
 import edu.mum.group3.service.VehicleService;
 
 /**
@@ -34,6 +34,9 @@ public class VehicleController {
 
 	@Autowired
 	private VehicleService vehicleService;
+	
+	@Autowired
+	private ModelService modelService;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
@@ -60,6 +63,7 @@ public class VehicleController {
 	public ModelAndView addVehicle(@ModelAttribute("command") VehicleBean vehicleBean, BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vehicles", prepareListofBean(vehicleService.listVehicles()));
+		model.put("models", prepareModelListofBean(modelService.listModels()));
 		return new ModelAndView("addVehicle", model);
 	}
 
@@ -77,6 +81,7 @@ public class VehicleController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("vehicle", prepareModelBean(vehicleService.getVehicle(vehicleBean.getId())));
 		model.put("vehicles", prepareListofBean(vehicleService.listVehicles()));
+		model.put("models", prepareModelListofBean(modelService.listModels()));
 		return new ModelAndView("addVehicle", model);
 	}
 
@@ -84,6 +89,7 @@ public class VehicleController {
 		Vehicle vehicle = new Vehicle();
 		
 		vehicle.setVehicleName(vehicleBean.getVehicleName());
+		vehicle.setModelId(vehicleBean.getModelId());
 		vehicle.setLicensePlate(vehicleBean.getLicensePlate());
 		vehicle.setChassisNumber(vehicleBean.getChassisNumber());
 		vehicle.setModelYear(vehicleBean.getModelYear());
@@ -111,6 +117,7 @@ public class VehicleController {
 			for (Vehicle vehicle : vehicles) {
 				bean = new VehicleBean();
 				bean.setVehicleName(vehicle.getVehicleName());
+				bean.setModelName(modelService.getModel(vehicle.getModelId()).getModelName());
 				bean.setId(vehicle.getVehicleId());				
 				bean.setLicensePlate(vehicle.getLicensePlate());
 				bean.setChassisNumber(vehicle.getChassisNumber());
@@ -131,11 +138,27 @@ public class VehicleController {
 		}
 		return beans;
 	}
+	
+	private List<ModelBean> prepareModelListofBean(List<Model> models) {
+		List<ModelBean> beans = null;
+		if (models != null && !models.isEmpty()) {
+			beans = new ArrayList<ModelBean>();
+			ModelBean bean = null;
+			for (Model model : models) {
+				bean = new ModelBean();
+				bean.setModelName(model.getModelName());
+				bean.setId(model.getModelId());				
+				beans.add(bean);
+			}
+		}
+		return beans;
+	}
 
 	private VehicleBean prepareModelBean(Vehicle vehicle) {
 		VehicleBean bean = new VehicleBean();
 		
 		bean.setVehicleName(vehicle.getVehicleName());
+		bean.setModelId(vehicle.getModelId());
 		bean.setLicensePlate(vehicle.getLicensePlate());
 		bean.setChassisNumber(vehicle.getChassisNumber());
 		bean.setModelYear(vehicle.getModelYear());

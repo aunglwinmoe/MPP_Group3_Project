@@ -9,7 +9,7 @@
 <title>Vehicle Management System</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="width: 100%; max-width: inherit">
 		<h3 class="page-title">Vehicles</h3>
 		<a href="addVehicle.html" class="btn btn-primary mb-2">Create</a>
 
@@ -24,6 +24,7 @@
 				-->
 
 						<th>Vehicle Name</th>
+						<th>Vehicle Model</th>
 						<th>License Plate</th>
 						<th>Chassis Number</th>
 						<th>Model Year</th>
@@ -47,6 +48,7 @@
 					<td><c:out value="${vehicle.residualVal}" /></td>
 					<td><c:out value="${vehicle.transmission}" /></td>-->
 							<td><c:out value="${vehicle.vehicleName}" /></td>
+							<td><c:out value="${vehicle.modelName}" /></td>
 							<td><c:out value="${vehicle.licensePlate}" /></td>
 							<td><c:out value="${vehicle.chassisNumber}" /></td>
 							<td><c:out value="${vehicle.modelYear}" /></td>
@@ -59,9 +61,10 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
-							<td align="center"><a
-								href="editVehicle.html?id=${vehicle.id}">Edit</a> | <a
-								href="deleteVehicle.html?id=${vehicle.id}">Delete</a></td>
+							<td align="center">
+								<a href="editVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
+								<a href="deleteVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

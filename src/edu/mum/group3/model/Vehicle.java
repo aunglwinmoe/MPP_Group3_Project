@@ -30,6 +30,9 @@ public class Vehicle implements Serializable {
 
 	@Column(name = "vehiclename")
 	private String vehicleName;
+	
+	@Column(name = "modelid")
+	private Integer modelId;
 
 	@Column(name = "licenseplate")
 	private String licensePlate;
@@ -88,6 +91,14 @@ public class Vehicle implements Serializable {
 
 	public void setVehicleName(String vehicleName) {
 		this.vehicleName = vehicleName;
+	}
+
+	public Integer getModelId() {
+		return modelId;
+	}
+
+	public void setModelId(Integer modelId) {
+		this.modelId = modelId;
 	}
 
 	public String getLicensePlate() {

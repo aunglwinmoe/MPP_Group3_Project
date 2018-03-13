@@ -13,9 +13,8 @@
 <body>
 	<div class="container">
 		<h3 class="page-title">Vehicle</h3>
-		<form:form method="POST" action="/group3/saveVehicle.html">
+		<form:form method="POST" action="/group3/saveVehicle.html" class=" needs-validation" novalidate="true">
 			<div class="row">
-				<br />
 				<form:hidden path="id" />
 				<div class="col-sm">
 
@@ -23,14 +22,30 @@
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
 							<form:input path="vehicleName" value="${vehicle.vehicleName}"
-								class="form-control" />
+								class="form-control" required="true"/>
+							<div class="valid-feedback">Looks good!</div>
+				    		<div class="invalid-feedback">Please enter a valid Vehicle name.</div>
 						</div>
 					</div>
 					<div class="form-group row">
-						<form:label path="licensePlate" class="col-sm-5 col-form-label">licensePlate:</form:label>
+						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Model:</form:label>
+						<div class="col-sm-7">
+							<form:select path="modelId" class="form-control" required="true">
+								<c:forEach items="${models}" var="model">
+									<option <c:if test="${model.id eq vehicle.modelId}">selected</c:if> value="${model.id}">${model.modelName}</option>
+								</c:forEach>
+							</form:select>
+							<div class="valid-feedback">Looks good!</div>
+				    		<div class="invalid-feedback">Please choose a Vehicle Model.</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
-								class="form-control" />
+								class="form-control" required="true" />
+								<div class="valid-feedback">Looks good!</div>
+				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -72,6 +87,8 @@
 								class="form-control" />
 						</div>
 					</div>
+				</div>
+				<div class="col-sm">
 					<div class="form-group row">
 						<form:label path="residualVal" class="col-sm-5 col-form-label">Residual Value:</form:label>
 						<div class="col-sm-7">
@@ -79,8 +96,6 @@
 								class="form-control" />
 						</div>
 					</div>
-				</div>
-				<div class="col-sm">
 					<div class="form-group row">
 						<form:label path="seatsNum" class="col-sm-5 col-form-label">Seats Number:</form:label>
 						<div class="col-sm-7">

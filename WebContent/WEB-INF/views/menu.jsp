@@ -61,7 +61,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a href="vehicles.html">Vehicles</a> <a href="odometers.html">Vehicles
-					Odometer</a> <a href="#">Vehicle Costs</a> <a href="contracts.html">Vehicle
+					Odometer</a> <a href="vehiclecosts.html">Vehicle Costs</a> <a href="contracts.html">Vehicle
 					Contracts</a>
 			</div>
 		</div>

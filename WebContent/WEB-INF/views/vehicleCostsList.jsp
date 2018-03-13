@@ -36,8 +36,8 @@
 							<td><c:out value="${vehiclecost.costDesc}" /></td>
 
 							<td align="center"><a
-								href="editOdometer.html?id=${vehiclecost.id}">Edit</a> | <a
-								href="deleteOdometer.html?id=${vehiclecost.id}">Delete</a></td>
+								href="editOdometer.html?id=${vehiclecost.id}" class="icon"><i class="fas fa-pencil-alt"></i></a><a
+								href="deleteOdometer.html?id=${vehiclecost.id}" class="icon"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
