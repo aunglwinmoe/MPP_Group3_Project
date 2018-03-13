@@ -41,12 +41,6 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<form:label path="jobPosition" class="col-sm-5 col-form-label">Job Position:</form:label>
-				<div class="col-sm-7">
-					<form:input path="jobPosition" value="${vendor.jobPosition}"  class="form-control"/>
-				</div>
-			</div>
-			<div class="form-group row">
 				<form:label path="phone" class="col-sm-5 col-form-label">Phone:</form:label>
 				<div class="col-sm-7">
 					<form:input path="phone" type="number" value="${vendor.phone}"  class="form-control"/>

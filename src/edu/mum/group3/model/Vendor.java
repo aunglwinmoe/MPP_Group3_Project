@@ -33,9 +33,6 @@ public class Vendor implements Serializable {
 	@Column(name = "ssn")
 	private Long ssn;
 	
-	@Column(name = "jobposition")
-	private String jobPosition;
-	
 	@Column(name = "phone")
 	private String phone;
 	
@@ -76,14 +73,6 @@ public class Vendor implements Serializable {
 
 	public void setSsn(Long ssn) {
 		this.ssn = ssn;
-	}
-
-	public String getJobPosition() {
-		return jobPosition;
-	}
-
-	public void setJobPosition(String jobPosition) {
-		this.jobPosition = jobPosition;
 	}
 
 	public String getPhone() {
