@@ -24,11 +24,13 @@
 				<div class="col-sm-7">
 					<form:select path="vehicleId" class="form-control" required="true">
 						<c:forEach items="${vehicles}" var="vehicle">
-							<option <c:if test="${vehicle.id eq odometer.vehicleId}">selected</c:if> value="${vehicle.id}">${vehicle.vehicleName}</option>
+							<option
+								<c:if test="${vehicle.id eq odometer.vehicleId}">selected</c:if>
+								value="${vehicle.id}">${vehicle.vehicleName}</option>
 						</c:forEach>
 					</form:select>
 					<div class="valid-feedback">Looks good!</div>
-				    <div class="invalid-feedback">Please choose a valid Vehicle.</div>
+					<div class="invalid-feedback">Please choose a valid Vehicle.</div>
 				</div>
 			</div>
 
@@ -36,9 +38,9 @@
 				<form:label path="odometerVal" class="col-sm-5 col-form-label">Odometer:</form:label>
 				<div class="col-sm-7">
 					<form:input path="odometerVal" value="${odometer.odometerVal}"
-						class="form-control" required="true"/>
-						<div class="valid-feedback">Looks good!</div>
-				    <div class="invalid-feedback">Please enter a valid Odometer.</div>
+						class="form-control" required="true" />
+					<div class="valid-feedback">Looks good!</div>
+					<div class="invalid-feedback">Please enter a valid Odometer.</div>
 				</div>
 			</div>
 
@@ -48,26 +50,23 @@
 					<fmt:formatDate pattern="yyyy-MM-dd" value="${odometer.date}"
 						var="odometerDate" />
 					<form:input id="date" type="date" path="date"
-						value="${odometerDate}" class="form-control" required="true"/>
-						<div class="valid-feedback">Looks good!</div>
-				    <div class="invalid-feedback">Please enter a valid Date.</div>
+						value="${odometerDate}" class="form-control" required="true" />
+					<div class="valid-feedback">Looks good!</div>
+					<div class="invalid-feedback">Please enter a valid Date.</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="status" class="col-sm-5 col-form-label">Status:</form:label>
 				<div class="col-sm-7">
 					<form:input path="status" value="${odometer.status}"
-						class="form-control" required="true"/>
-						<div class="valid-feedback">Looks good!</div>
-				    <div class="invalid-feedback">Please enter a valid Status.</div>
+						class="form-control" required="true" readonly="true" />
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="chkService" class="col-sm-5 col-form-label"></form:label>
 				<div class="col-sm-7">
 					<jstl:if test="${odometer.chkService}">
-						<form:checkbox path="chkService" checked="checked" label="Service"
-							disabled="true" />
+						<form:checkbox path="chkService" checked="checked" label="Service" />
 					</jstl:if>
 					<jstl:if test="${!odometer.chkService}">
 						<form:checkbox path="chkService" label="Service" />
