@@ -12,7 +12,7 @@
 	<div class="container">
 		<h3 class="page-title">Odometers</h3>
 		<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
-		<button onclick="myFunction()">Print this page</button>
+		<!-- <button onclick="myFunction()">Print this page</button>-->
 
 		<c:if test="${!empty odometers}">
 			<table class="table table-hover" id="odometerListTable">

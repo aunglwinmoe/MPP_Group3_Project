@@ -12,7 +12,6 @@
 	<div class="container">
 		<h3 class="page-title">Vehicle Costs</h3>
 		<a href="addVehicleCost.html" class="btn btn-primary mb-2">Create</a>
-		<button onclick="myFunction()">Print this page</button>
 
 		<c:if test="${!empty vehiclecosts}">
 			<table class="table table-hover" id="vehicleCostListTable">
