@@ -18,13 +18,18 @@
 			class="col-sm-4">
 
 			<form:hidden path="id" />
+
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vehicleId" value="${odometer.vehicleId}"
-						class="form-control" />
+					<form:select path="vehicleId" class="form-control">
+						<c:forEach items="${vehicles}" var="vehicle">
+							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<form:label path="odometerVal" class="col-sm-5 col-form-label">Odometer:</form:label>
 				<div class="col-sm-7">
@@ -66,8 +71,24 @@
 			<center>
 				<input type="submit" value="Save" class="btn btn-primary mb-2" />
 			</center>
+
+			<jsp:useBean id="odometer" class="edu.mum.group3.bean.OdometerBean">
+				<jsp:setProperty name="odometer" property="status"
+					value="${odometer.status}" />
+			</jsp:useBean>
+
+			<p>
+				Student First Name:
+				<jsp:getProperty name="odometer" property="status" />
+			</p>
+
 		</form:form>
 	</div>
+
+
+
+
+
 </body>
 <script>
 	function changeValueCheckbox(element) {

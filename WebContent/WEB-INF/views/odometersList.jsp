@@ -12,6 +12,7 @@
 	<div class="container">
 		<h3 class="page-title">Odometers</h3>
 		<a href="addOdometer.html" class="btn btn-primary mb-2">Create</a>
+		<!-- <button onclick="myFunction()">Print this page</button>-->
 
 		<c:if test="${!empty odometers}">
 			<table class="table table-hover" id="odometerListTable">
@@ -27,7 +28,7 @@
 				<tbody>
 					<c:forEach items="${odometers}" var="odometer">
 						<tr>
-							<td><c:out value="${odometer.vehicleId}" /></td>
+							<td><c:out value="${odometer.vehicleName}" /></td>
 							<td><c:out value="${odometer.odometerVal}" /></td>
 							<td><c:out value="${odometer.date}" /></td>
 							<td><c:out value="${odometer.status}" /></td>
@@ -43,6 +44,9 @@
 	</div>
 </body>
 <script type="text/javascript">
+	function myFunction() {
+		window.print();
+	}
 	$(document).ready(function() {
 		$('#odometerListTable').DataTable();
 	});

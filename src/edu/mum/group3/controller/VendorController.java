@@ -53,6 +53,11 @@ public class VendorController {
 		return new ModelAndView("index");
 	}
 
+	@RequestMapping(value = "/menu", method = RequestMethod.POST)
+	public ModelAndView menu() {
+		return new ModelAndView("menu");
+	}
+	
 	@RequestMapping(value = "/deleteVendor", method = RequestMethod.GET)
 	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {
 		vendorService.deleteVendor(prepareModel(vendorBean));

@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,8 +21,11 @@
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vehicleId" value="${fuelLog.vehicleId}"
-						class="form-control" />
+					<form:select path="vehicleId" class="form-control">
+						<c:forEach items="${vehicles}" var="vehicle">
+							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -49,10 +53,14 @@
 			<div class="form-group row">
 				<form:label path="date" class="col-sm-5 col-form-label">Date:</form:label>
 				<div class="col-sm-7">
-					<form:input path="date" value="${fuelLog.date}"
-						class="form-control" />
+					<fmt:formatDate pattern="yyyy-MM-dd" value="${fuelLog.date}"
+						var="fuelLogDate" />
+					<form:input id="date" type="date" path="date"
+						value="${fuelLogDate}" class="form-control" />
 				</div>
 			</div>
+			
+			
 			<div class="form-group row">
 				<form:label path="invoiceReference" class="col-sm-5 col-form-label">Invoice Reference:</form:label>
 				<div class="col-sm-7">
@@ -73,14 +81,7 @@
 					<form:input path="vendorId" value="${fuelLog.vendorId}"
 						class="form-control" />
 				</div>
-			</div>
-			<div class="form-group row">
-				<form:label path="purchaserId" class="col-sm-5 col-form-label">Purchaser:</form:label>
-				<div class="col-sm-7">
-					<form:input path="purchaserId" value="${fuelLog.purchaserId}"
-						class="form-control" />
-				</div>
-			</div>
+			</div> 
 			<center>
 				<input type="submit" value="Save" class="btn btn-primary mb-2" />
 			</center>
