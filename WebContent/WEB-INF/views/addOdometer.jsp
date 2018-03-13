@@ -66,7 +66,7 @@
 				<form:label path="chkService" class="col-sm-5 col-form-label"></form:label>
 				<div class="col-sm-7">
 					<jstl:if test="${odometer.chkService}">
-						<form:checkbox path="chkService" checked="checked" label="Service" />
+						<form:checkbox path="chkService" checked="checked" label="Service" readonly="true" />
 					</jstl:if>
 					<jstl:if test="${!odometer.chkService}">
 						<form:checkbox path="chkService" label="Service" />
