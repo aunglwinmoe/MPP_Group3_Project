@@ -18,11 +18,12 @@
 				<form:hidden path="id" />
 				<div class="col-sm">
 
+
 					<div class="form-group row">
 						<form:label path="vehicleName" class="col-sm-5 col-form-label">Vehicle Name:</form:label>
 						<div class="col-sm-7">
 							<form:input path="vehicleName" value="${vehicle.vehicleName}"
-								class="form-control" required="true"/>
+								class="form-control" readonly="true" />
 							<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid Vehicle name.</div>
 						</div>
@@ -39,10 +40,12 @@
 				    		<div class="invalid-feedback">Please choose a Vehicle Model.</div>
 						</div>
 					</div>
+
 					<div class="form-group row">
 						<form:label path="licensePlate" class="col-sm-5 col-form-label">License Plate:</form:label>
 						<div class="col-sm-7">
 							<form:input path="licensePlate" value="${vehicle.licensePlate}"
+								class="form-control" required="true" />
 								class="form-control" required="true" pattern="^[A-Z]{3}[0-9]{3}" placeholder="e.g ABC123"/>
 								<div class="valid-feedback">Looks good!</div>
 				    		<div class="invalid-feedback">Please enter a valid License Plate.</div>
@@ -52,14 +55,14 @@
 						<form:label path="chassisNumber" class="col-sm-5 col-form-label">Chassis Number:</form:label>
 						<div class="col-sm-7">
 							<form:input path="chassisNumber" value="${vehicle.chassisNumber}"
-								class="form-control" />
+								class="form-control" required="true" />
 						</div>
 					</div>
 					<div class="form-group row">
 						<form:label path="modelYear" class="col-sm-5 col-form-label">Model Year:</form:label>
 						<div class="col-sm-7">
 							<form:input path="modelYear" value="${vehicle.modelYear}"
-								class="form-control" />
+								class="form-control" required="true" />
 						</div>
 					</div>
 					<div class="form-group row">
@@ -96,6 +99,20 @@
 								class="form-control" />
 						</div>
 					</div>
+<<<<<<< HEAD
+
+					<div class="form-group row">
+						<form:label path="limitedOdometer" class="col-sm-5 col-form-label">Odometer Limit:</form:label>
+						<div class="col-sm-7">
+							<form:input path="limitedOdometer"
+								value="${vehicle.limitedOdometer}" class="form-control"
+								required="true" />
+						</div>
+					</div>
+				</div>
+				<div class="col-sm">
+=======
+>>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 					<div class="form-group row">
 						<form:label path="seatsNum" class="col-sm-5 col-form-label">Seats Number:</form:label>
 						<div class="col-sm-7">
@@ -144,6 +161,18 @@
 						<div class="col-sm-7">
 							<form:input path="power" value="${vehicle.power}"
 								class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<form:label path="status" class="col-sm-5 col-form-label">Status:</form:label>
+						<div class="col-sm-7">
+							<form:select path="status" class="form-control" required="true"
+								multiple="false">
+								<option <c:if test="${status}=='On Sold'">selected</c:if>
+									value="On Sold">On Sold</option>
+								<option <c:if test="${status}=='On Rent'">selected</c:if>
+									value="On Rent">On Rent</option>
+							</form:select>
 						</div>
 					</div>
 				</div>

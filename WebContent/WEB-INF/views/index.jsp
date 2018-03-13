@@ -20,6 +20,26 @@
 </head>
 <body>
 	<div class="container">
+	
+		<form:form method="POST" action="/group3/login.html" class="col-sm-4"> 
+			<div class="login_logo"></div>
+			<div style="margin-left: 400px; margin-top: 20px;">
+				<label style="margin-right: 104px;">User Name</label> <input
+					type="text" name="userName" id="userName" size="17" value=""/>
+			</div> 
+
+			<div style="margin-left: 410px; margin-top: 20px;">
+				<label style="margin-right: 104px;">Password</label> <input
+					type="password" name="password" id="password"  size="17" value=""/>
+			</div>
+
+			<div style="margin-left: 585px; margin-top: 20px;">
+				<input type="submit" value="Login" class="login_button"
+					onClick="document.location.href='index.html'" />
+			</div>
+			 
+
+		</form:form>
 		<div class="row justify-content-md-center" style="margin-top:200px">
 			<div class="login_logo"></div>
 			<form:form method="POST" action="/group3/menu.html" class="col-sm-4">

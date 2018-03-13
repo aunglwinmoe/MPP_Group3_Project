@@ -47,16 +47,6 @@ public class VendorController {
 		model.put("vendors", prepareListofBean(vendorService.listVendors()));
 		return new ModelAndView("addVendor", model);
 	}
-
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public ModelAndView welcome() {
-		return new ModelAndView("index");
-	}
-
-	@RequestMapping(value = "/menu", method = RequestMethod.POST)
-	public ModelAndView menu() {
-		return new ModelAndView("menu");
-	}
 	
 	@RequestMapping(value = "/deleteVendor", method = RequestMethod.GET)
 	public ModelAndView deleteVendor(@ModelAttribute("command") VendorBean vendorBean, BindingResult result) {

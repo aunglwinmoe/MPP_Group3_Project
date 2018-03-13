@@ -77,6 +77,12 @@ public class Vehicle implements Serializable {
 	@Column(name = "power")
 	private String power;
 
+	@Column(name = "status")
+	private String status;
+
+	@Column(name = "limitedodometer")
+	private double limitedOdometer;
+
 	public Integer getVehicleId() {
 		return vehicleId;
 	}
@@ -211,6 +217,22 @@ public class Vehicle implements Serializable {
 
 	public void setPower(String power) {
 		this.power = power;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public double getLimitedOdometer() {
+		return limitedOdometer;
+	}
+
+	public void setLimitedOdometer(double limitedOdometer) {
+		this.limitedOdometer = limitedOdometer;
 	}
 
 }

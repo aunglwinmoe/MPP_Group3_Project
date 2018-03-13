@@ -53,6 +53,8 @@
 </head>
 <body>
 <h1 align="center" class="page-title">Vehicle Management System</h1>
+
+<h5 align="right"> Welcome <%=session.getAttribute("userName")%> <a href='logout.html'> Log out</a> </h5>
 	<div class="topnav" id="myTopnav">
 
 		<div class="dropdown">
@@ -104,6 +106,8 @@
 			</div>
 		</div> -->
 
-		<a href="#mapping">Vehicle Unit Mapping</a> <a
+		<!-- <a href="#mapping">Vehicle Unit Mapping</a>-->
+		
+		<a
 			href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>

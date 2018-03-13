@@ -37,6 +37,7 @@
 						<th>Fuel Type</th>
 						<th>Horse Power</th>
 						<th>Power</th>
+						<th>Status</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -61,10 +62,17 @@
 							<td><c:out value="${vehicle.fuelType}" /></td>
 							<td><c:out value="${vehicle.horsePower}" /></td>
 							<td><c:out value="${vehicle.power}" /></td>
+<<<<<<< HEAD
+							<td><c:out value="${vehicle.status}" /></td>
+							<td align="center"><a
+								href="editVehicle.html?id=${vehicle.id}">Edit</a> | <a
+								href="deleteVehicle.html?id=${vehicle.id}">Delete</a></td>
+=======
 							<td align="center">
 								<a href="editVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-pencil-alt"></i></a>
 								<a href="deleteVehicle.html?id=${vehicle.id}" class="icon"><i class="fas fa-trash-alt"></i></a>
 							</td>
+>>>>>>> 2372f41de2e7cf8a4f80f8a80886293c99dd724b
 						</tr>
 					</c:forEach>
 				</tbody>
