@@ -10,11 +10,12 @@
 </head>
 <body>
 	<div class="container" style="width: 100%; max-width: inherit">
-		<h3 class="page-title">Vehicles<a href="addVehicle.html" class="btn mb-2"><i class="fas fa-add-alt"></i>Create</a></h3>
+		<h3 class="page-title">Vehicles</h3>
+		<a href="addVehicle.html" class="btn"><i class="fas fa-plus-circle"></i> New</a>
 		<c:if test="${!empty vehicles}">
 			<table class="table table-hover" id="vehicleListTable">
 				<thead>
-					<tr>
+					<tr>	
 						<!-- <th>Vehicle ID</th>
 				<th>Catalog Value</th>
 				<th>Residual Value</th>

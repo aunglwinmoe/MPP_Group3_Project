@@ -23,17 +23,13 @@
 		<div class="row justify-content-md-center" style="margin-top:200px">
 			<div class="login_logo"></div>
 			<form:form method="POST" action="/group3/login.html" class="col-sm-4">
-				<div class="form-group row">
-					<label class="col-sm-5 col-form-label">User Name:</label> 
-					<div class="col-sm-7">
-						<input type="text" name="userName" id="userName" size="17" class="form-control" required/>
-					</div>
+				<div class="form-group">
+					<label class="col-form-label">User Name:</label>
+					<input type="text" name="userName" id="userName" size="17" class="form-control" required/>
 				</div>
-				<div class="form-group row">
-					<label class="col-sm-5 col-form-label">Password:</label>
-					<div class="col-sm-7"> 
-						<input type="password" id="password" name="password" size="17"  class="form-control" required/>
-					</div>
+				<div class="form-group">
+					<label class="col-form-label">Password:</label> 
+					<input type="password" id="password" name="password" size="17"  class="form-control" required/>
 				</div>
 				<input type="submit" value="Login" class="btn btn-primary mb-2"/>
 			</form:form>

@@ -168,10 +168,7 @@
 					</div>
 				</div>
 			</div>
-
-			<center>
-				<input type="submit" value="Save" class="btn btn-primary mb-2" />
-			</center>
+			<input type="submit" value="Save" class="btn btn-primary mb-2" />
 
 		</form:form>
 	</div>

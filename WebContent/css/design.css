@@ -146,8 +146,7 @@ a:hover {
 }
 
 .page-title {
-	margin: 20px 0;
-	float: left;
+	margin: 30px 0;
 }
 
 .icon {
@@ -177,17 +176,19 @@ a:hover {
 	margin: 0 auto 35px;
 	text-transform: uppercase;
 }
+.btn {
+	color: #875A7B;
+	border-color: #875A7B !Important;
+	margin-bottom: 20px;
+}
+.btn:hover {
+	color: #ccc !important;
+	border-color: #ccc !Important;
+}
 .login_logo {
 	background-image: url(../css/Vehicle_System_Logo.png);
 	height: 300px;
 	width: 400px;
-	margin-left: 500px;
-	margin-top: 10px;
-}
-
-.login-text-position {
-	margin-left: 400px;
-	margin-top: 30px;
 }
 
 .logo-container{
@@ -196,12 +197,18 @@ a:hover {
    background-image: url(../css/Vehicle_System_Logo.png);
 }
 
-.login-button-position {
-	margin-left: 484px;
-	margin-top: 20px;
-}
- 
 .login_button {
 	margin-right: 204px;
 }
 
+form {
+	font-size: 13px !important;
+}
+
+.dataTables_filter input, .dataTables_length select {
+	border: 1px solid #ccc !Important;
+}
+
+.sorting_asc, .sorting {
+	color: #aaa Important;
+}
