@@ -17,7 +17,7 @@
 			<div class="form-group row">
 				<form:label path="makeName" class="col-sm-5 col-form-label">Make:</form:label>
 				<div class="col-sm-7">
-					<form:input path="makeName" value="${make.makeName}"  class="form-control" required="true"/>
+					<form:input path="makeName" value="${make.makeName}" class="form-control" required="true"/>
 					<div class="valid-feedback">Looks good!</div>
 				    <div class="invalid-feedback">Please enter a valid Make name.</div>
 				</div>

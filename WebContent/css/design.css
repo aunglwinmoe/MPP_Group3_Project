@@ -151,6 +151,7 @@ a:hover {
 
 .icon {
 	padding: 0 5px;
+	background: #875A7B !important;
 }
 .table {
 	font-size: 13px !Important;
@@ -211,4 +212,11 @@ form {
 
 .sorting_asc, .sorting {
 	color: #aaa Important;
+}
+
+h5 {
+    font-size: 15px !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }

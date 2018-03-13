@@ -17,7 +17,7 @@
 			<div class="form-group row">
 				<form:label path="modelName" class="col-sm-5 col-form-label">Model name:</form:label>
 				<div class="col-sm-7">
-					<form:input path="modelName" value="${model.modelName}"  class="form-control" required="true"/>
+					<form:input path="modelName" value="${model.modelName}"  class="form-control"   pattern="^[A-Z]{1}[0-9]{1}" placeholder="e.g A1"  required="true"/>
 					<div class="valid-feedback">Looks good!</div>
 				    <div class="invalid-feedback">Please enter a valid Model name.</div>
 				</div>

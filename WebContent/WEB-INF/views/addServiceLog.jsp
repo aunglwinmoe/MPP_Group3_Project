@@ -10,6 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <jsp:include page="menu.jsp" />
 <title></title>
+<style>
+h5 {
+    font-size: 15px !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+</style>
 </head>
 <body>
 	<div class="container">
