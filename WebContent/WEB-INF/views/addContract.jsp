@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,15 +21,22 @@
 			<div class="form-group row">
 				<form:label path="vehicleId" class="col-sm-5 col-form-label">Vehicle:</form:label>
 				<div class="col-sm-7">
-					<form:input path="vehicleId" value="${contract.vehicleId}"
-						class="form-control" />
+					<form:select path="vehicleId" class="form-control">
+						<c:forEach items="${vehicles}" var="vehicle">
+							<form:option value="${vehicle.id}">${vehicle.vehicleName}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<form:label path="contractTypeId" class="col-sm-5 col-form-label">Contract Type:</form:label>
 				<div class="col-sm-7">
-					<form:input path="contractTypeId"
-						value="${contract.contractTypeId}" class="form-control" />
+					<form:select path="contractTypeId" class="form-control">
+						<c:forEach items="${contracttypes}" var="contracttype">
+							<form:option value="${contracttype.id}">${contracttype.contractTypeName}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 
@@ -40,27 +48,37 @@
 						value="${contract.odometerAtCreation}" class="form-control" />
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<form:label path="invoiceDate" class="col-sm-5 col-form-label">Invoice Date:</form:label>
 				<div class="col-sm-7">
-					<form:input path="invoiceDate" value="${contract.invoiceDate}"
-						class="form-control" />
+					<fmt:formatDate pattern="yyyy-MM-dd"
+						value="${contract.invoiceDate}" var="invDate" />
+					<form:input id="invoiceDate" type="date" path="invoiceDate"
+						value="${invDate}" class="form-control" />
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<form:label path="contractStartDate" class="col-sm-5 col-form-label">Contract Start Date:</form:label>
 				<div class="col-sm-7">
-					<form:input path="contractStartDate"
-						value="${contract.contractStartDate}" class="form-control" />
+					<fmt:formatDate pattern="yyyy-MM-dd"
+						value="${contract.contractStartDate}" var="contractSDate" />
+					<form:input id="contractStartDate" type="date"
+						path="contractStartDate" value="${contractSDate}"
+						class="form-control" />
 				</div>
 			</div>
 			<div class="form-group row">
 				<form:label path="contractExpDate" class="col-sm-5 col-form-label">Contract Expiration Date:</form:label>
 				<div class="col-sm-7">
-					<form:input path="contractExpDate"
-						value="${contract.contractExpDate}" class="form-control" />
+					<fmt:formatDate pattern="yyyy-MM-dd"
+						value="${contract.contractExpDate}" var="contractExpirationDate" />
+					<form:input id="contractExpDate" type="date" path="contractExpDate"
+						value="${contractExpirationDate}" class="form-control" />
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<form:label path="contractorId" class="col-sm-5 col-form-label">Contractor:</form:label>
 				<div class="col-sm-7">

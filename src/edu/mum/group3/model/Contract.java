@@ -2,6 +2,7 @@ package edu.mum.group3.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author Lwin Moe Aung
@@ -34,13 +37,16 @@ public class Contract implements Serializable {
 	private double odometerAtCreation;
 
 	@Column(name = "invoicedate")
-	private LocalDate invoiceDate;
+	@DateTimeFormat(pattern = "MM-dd-yyyy")
+	private Date invoiceDate;
 
 	@Column(name = "contractstartdate")
-	private LocalDate contractStartDate;
+	@DateTimeFormat(pattern = "MM-dd-yyyy")
+	private Date contractStartDate;
 
 	@Column(name = "contractexpdate")
-	private LocalDate contractExpDate;
+	@DateTimeFormat(pattern = "MM-dd-yyyy")
+	private Date contractExpDate;
 
 	@Column(name = "contractorid")
 	private Integer contractorId;
@@ -86,27 +92,27 @@ public class Contract implements Serializable {
 		this.odometerAtCreation = odometerAtCreation;
 	}
 
-	public LocalDate getInvoiceDate() {
+	public Date getInvoiceDate() {
 		return invoiceDate;
 	}
 
-	public void setInvoiceDate(LocalDate invoiceDate) {
+	public void setInvoiceDate(Date invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
-	public LocalDate getContractStartDate() {
+	public Date getContractStartDate() {
 		return contractStartDate;
 	}
 
-	public void setContractStartDate(LocalDate contractStartDate) {
+	public void setContractStartDate(Date contractStartDate) {
 		this.contractStartDate = contractStartDate;
 	}
 
-	public LocalDate getContractExpDate() {
+	public Date getContractExpDate() {
 		return contractExpDate;
 	}
 
-	public void setContractExpDate(LocalDate contractExpDate) {
+	public void setContractExpDate(Date contractExpDate) {
 		this.contractExpDate = contractExpDate;
 	}
 
