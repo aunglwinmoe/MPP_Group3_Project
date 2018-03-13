@@ -143,22 +143,24 @@ h1, h3 {
 }
 
 .page-title {
-	margin: 30px 0;
+	margin: 20px 0;
 }
 
 .icon {
 	padding: 0 5px;
 }
 
-.table {
-	font-size: 13px !important;
-}
 .login_logo {
 	background-image: url(../css/Vehicle_System_Logo.png);
 	height: 300px;
 	width: 400px;
-	margin-left: 100px;
-	margin-right: 300px;
+	margin-left: 500px;
+	margin-top: 10px;
+}
+
+.login-text-position {
+	margin-left: 400px;
+	margin-top: 30px;
 }
 
 .logo-container{
@@ -167,4 +169,12 @@ h1, h3 {
    background-image: url(../css/Vehicle_System_Logo.png);
 }
 
+.login-button-position {
+	margin-left: 484px;
+	margin-top: 20px;
+}
+ 
+.login_button {
+	margin-right: 204px;
+}
 
