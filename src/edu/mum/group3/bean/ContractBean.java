@@ -1,15 +1,18 @@
 package edu.mum.group3.bean;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class ContractBean {
 	private Integer id;
 	private Integer vehicleId;
+	private String vehicleName;
 	private Integer contractTypeId;
+	private String contractTypeName;
 	private double odometerAtCreation;
-	private LocalDate invoiceDate;
-	private LocalDate contractStartDate;
-	private LocalDate contractExpDate;
+	private Date invoiceDate;
+	private Date contractStartDate;
+	private Date contractExpDate;
 	private Integer contractorId;
 	private Integer vendorId;
 	private double rentalCost;
@@ -47,27 +50,27 @@ public class ContractBean {
 		this.odometerAtCreation = odometerAtCreation;
 	}
 
-	public LocalDate getInvoiceDate() {
+	public Date getInvoiceDate() {
 		return invoiceDate;
 	}
 
-	public void setInvoiceDate(LocalDate invoiceDate) {
+	public void setInvoiceDate(Date invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
-	public LocalDate getContractStartDate() {
+	public Date getContractStartDate() {
 		return contractStartDate;
 	}
 
-	public void setContractStartDate(LocalDate contractStartDate) {
+	public void setContractStartDate(Date contractStartDate) {
 		this.contractStartDate = contractStartDate;
 	}
 
-	public LocalDate getContractExpDate() {
+	public Date getContractExpDate() {
 		return contractExpDate;
 	}
 
-	public void setContractExpDate(LocalDate contractExpDate) {
+	public void setContractExpDate(Date contractExpDate) {
 		this.contractExpDate = contractExpDate;
 	}
 
@@ -77,6 +80,14 @@ public class ContractBean {
 
 	public void setContractorId(Integer contractorId) {
 		this.contractorId = contractorId;
+	}
+
+	public String getContractTypeName() {
+		return contractTypeName;
+	}
+
+	public void setContractTypeName(String contractTypeName) {
+		this.contractTypeName = contractTypeName;
 	}
 
 	public Integer getVendorId() {
@@ -101,6 +112,14 @@ public class ContractBean {
 
 	public void setTermsAndConditions(String termsAndConditions) {
 		this.termsAndConditions = termsAndConditions;
+	}
+
+	public String getVehicleName() {
+		return vehicleName;
+	}
+
+	public void setVehicleName(String vehicleName) {
+		this.vehicleName = vehicleName;
 	}
 
 }

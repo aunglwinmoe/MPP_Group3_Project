@@ -1,6 +1,7 @@
 package edu.mum.group3.bean;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @author Lwin Moe Aung
@@ -13,7 +14,7 @@ public class VehicleBean {
 	private String chassisNumber;
 	private String modelYear;
 	private double lastOdometer;
-	private LocalDate immatriculationDate;
+	private Date immatriculationDate;
 	private double catalogVal;
 	private double residualVal;
 	private int seatsNum;
@@ -72,11 +73,11 @@ public class VehicleBean {
 		this.lastOdometer = lastOdometer;
 	}
 
-	public LocalDate getImmatriculationDate() {
+	public Date getImmatriculationDate() {
 		return immatriculationDate;
 	}
 
-	public void setImmatriculationDate(LocalDate immatriculationDate) {
+	public void setImmatriculationDate(Date immatriculationDate) {
 		this.immatriculationDate = immatriculationDate;
 	}
 

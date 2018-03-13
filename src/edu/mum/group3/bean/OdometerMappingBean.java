@@ -5,7 +5,7 @@ import java.util.List;
 public class OdometerMappingBean {
 	private Integer id;
 	private double maxOdometer;
-	private List<VehicleBean> vehicleList;
+//	private List<VehicleBean> vehicleList;
 
 	public Integer getId() {
 		return id;
@@ -23,12 +23,12 @@ public class OdometerMappingBean {
 		this.maxOdometer = maxOdometer;
 	}
 
-	public List<VehicleBean> getVehicleList() {
-		return vehicleList;
-	}
-
-	public void setVehicleList(List<VehicleBean> vehicleList) {
-		this.vehicleList = vehicleList;
-	}
+//	public List<VehicleBean> getVehicleList() {
+//		return vehicleList;
+//	}
+//
+//	public void setVehicleList(List<VehicleBean> vehicleList) {
+//		this.vehicleList = vehicleList;
+//	}
 
 }

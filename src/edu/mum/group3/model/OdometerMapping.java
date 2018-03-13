@@ -27,9 +27,9 @@ public class OdometerMapping implements Serializable {
 	@Column(name = "maxodometer")
 	private double maxOdometer;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="vehicleid")
-	private List<Vehicle> vehicleList;
+//	@OneToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name="vehicleid")
+//	private List<Vehicle> vehicleList;
 
 	public Integer getOdometerMappingId() {
 		return odometerMappingId;
@@ -47,12 +47,12 @@ public class OdometerMapping implements Serializable {
 		this.maxOdometer = maxOdometer;
 	}
 
-	public List<Vehicle> getVehicleList() {
-		return vehicleList;
-	}
-
-	public void setVehicleList(List<Vehicle> vehicleList) {
-		this.vehicleList = vehicleList;
-	}
+//	public List<Vehicle> getVehicleList() {
+//		return vehicleList;
+//	}
+//
+//	public void setVehicleList(List<Vehicle> vehicleList) {
+//		this.vehicleList = vehicleList;
+//	}
 
 }

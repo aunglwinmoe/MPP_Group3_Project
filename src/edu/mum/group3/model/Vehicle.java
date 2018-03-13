@@ -2,6 +2,7 @@ package edu.mum.group3.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author Lwin Moe Aung
@@ -41,7 +44,8 @@ public class Vehicle implements Serializable {
 	private double lastOdometer;
 
 	@Column(name = "immatriculationdate")
-	private LocalDate immatriculationDate;
+	@DateTimeFormat(pattern = "MM-dd-yyyy")
+	private Date immatriculationDate;
 
 	@Column(name = "catalogval")
 	private double catalogVal;
@@ -118,11 +122,11 @@ public class Vehicle implements Serializable {
 		this.lastOdometer = lastOdometer;
 	}
 
-	public LocalDate getImmatriculationDate() {
+	public Date getImmatriculationDate() {
 		return immatriculationDate;
 	}
 
-	public void setImmatriculationDate(LocalDate immatriculationDate) {
+	public void setImmatriculationDate(Date immatriculationDate) {
 		this.immatriculationDate = immatriculationDate;
 	}
 
